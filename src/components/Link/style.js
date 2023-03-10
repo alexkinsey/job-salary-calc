@@ -8,5 +8,5 @@ export const LinkContainer = styled.a`
 `;
 
 export const LinkText = styled.span`
-  font-size: 1.1rem;
+  font-size: 1rem;
 `;

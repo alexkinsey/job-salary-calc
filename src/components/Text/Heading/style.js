@@ -3,6 +3,7 @@ import { font } from '../../../styles/Theme';
 
 export const StyledHeading = styled.h1`
   ${font.heading};
+  color: ${({ theme }) => theme.colors.text};
   font-size: 22px;
   margin: 1rem 0 0 0;
 `;

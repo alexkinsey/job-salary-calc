@@ -9,7 +9,7 @@ export const Link = ({ children, location, isExternal }) => {
     <>
       {isExternal ? (
         <LinkContainer href={location} target="_blank" rel="noreferrer">
-          <FiExternalLink style={{fontSize: '20px'}} />
+          <FiExternalLink style={{fontSize: '18px'}} />
           <LinkText> {children}</LinkText>
         </LinkContainer>
       ) : (

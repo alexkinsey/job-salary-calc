@@ -14,13 +14,13 @@ const size = {
 
 export const theme = {
   colors: {
-    primary: '#06c',
-    primaryHover: '#005bb6',
-    secondary: '#FFC80A',
-    tertiary: '#303030',
-    background: '#fff',
-    textBlack: '#1d1d1f',
-    textWhite: '#f5f5f7',
+    primary: '#f85000',
+    primaryHover: '#d92600',
+    secondary: '#20496b',
+    background: '#f9faf7',
+    textBlack: '#2e3742',
+    textGrey: '#5b6876',
+    textWhite: '#f9f9f9',
   },
   fonts: {
     sanSerif: 'Open Sans',

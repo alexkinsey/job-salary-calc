@@ -4,7 +4,7 @@ import { font } from '../../styles/Theme';
 export const NavBarBackground = styled.nav`
   display: flex;
   justify-content: center;
-  background-color: ${({ theme }) => theme.colors.tertiary};
+  background-color: ${({ theme }) => theme.colors.secondary};
   height: 60px;
   padding: 0 20px;
   min-width: ${({ theme }) => theme.sizes.xs};
