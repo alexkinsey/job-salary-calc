@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import { Input, Label } from './style';
 
 // This component takes in a type, label, placeholder, value, and onChange function
@@ -18,4 +18,11 @@ FormInput.defaultProps = {
   type: 'text',
   label: 'Input',
   placeholder: 'Enter text',
+};
+FormInput.propTypes = {
+  type: PropTypes.string,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };

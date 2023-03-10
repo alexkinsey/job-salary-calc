@@ -1,16 +1,15 @@
 import { useState } from 'react';
 
 // COMPONENTS
-import { Form } from '../../components/Form';
-import { FormInput } from '../../components/Form/FormInput';
-import { FormSelect } from '../../components/Form/FormSelect';
 import { PageBody } from '../../components/Layout/PageBody';
 import { Text } from '../../components/Text/Text';
 import { Title } from '../../components/Text/Title';
+import { calculatePay } from './helpers';
+import { PayCalcForm } from './PayCalcForm';
 
 export const PayCalc = () => {
-  const PayPeriods = [
-    { value: 'daily', label: 'Daily' },
+  const payPeriods = [
+    { value: 'hourly', label: 'Hourly' },
     { value: 'weekly', label: 'Weekly' },
     { value: 'monthly', label: 'Monthly' },
     { value: 'yearly', label: 'Yearly' },
@@ -18,7 +17,7 @@ export const PayCalc = () => {
 
   const [jobTitle, setJobTitle] = useState('');
   const [payAmount, setPayAmount] = useState('');
-  const [selectedPayPeriod, setSelectedPayPeriod] = useState(PayPeriods[0].value);
+  const [selectedPayPeriod, setSelectedPayPeriod] = useState(payPeriods[0].value);
   const handlePayPeriodChange = (event) => {
     setSelectedPayPeriod(event.target.value);
   };
@@ -26,7 +25,7 @@ export const PayCalc = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Do something with the form data here
+    console.log(calculatePay(payAmount, selectedPayPeriod, hoursPerWeek));
   };
 
   return (
@@ -36,37 +35,18 @@ export const PayCalc = () => {
         Please enter the details for each field and the result will be shown below. You can generate multiple results by
         pressing the button.
       </Text>
-      <Form onSubmit={handleSubmit}>
-        <FormInput
-          type="text"
-          label="Job Title"
-          placeholder="Enter job title"
-          value={jobTitle}
-          onChange={(e) => setJobTitle(e.target.value)}
-        />
-        <FormInput
-          type="number"
-          label="Pay Amount"
-          placeholder="Enter number"
-          value={payAmount}
-          onChange={(e) => setPayAmount(e.target.value)}
-        />
-        <FormSelect
-          label="Pay Period"
-          options={PayPeriods}
-          selectedOption={selectedPayPeriod}
-          handleOptionChange={handlePayPeriodChange}
-        />
-
-        <FormInput
-          type="number"
-          label="Hours per Week"
-          placeholder="Enter number"
-          value={hoursPerWeek}
-          onChange={(e) => setHoursPerWeek(e.target.value)}
-        />
-        <button type="submit">Calculate</button>
-      </Form>
+      <PayCalcForm
+        handleSubmit={handleSubmit}
+        jobTitle={jobTitle}
+        setJobTitle={setJobTitle}
+        payAmount={payAmount}
+        setPayAmount={setPayAmount}
+        payPeriods={payPeriods}
+        selectedPayPeriod={selectedPayPeriod}
+        handlePayPeriodChange={handlePayPeriodChange}
+        hoursPerWeek={hoursPerWeek}
+        setHoursPerWeek={setHoursPerWeek}
+      />
     </PageBody>
   );
 };

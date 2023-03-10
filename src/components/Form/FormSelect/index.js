@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import { Select, Label } from './style';
 
 // This component takes in a label, options, selectedOption, and handleOptionChange function
@@ -9,7 +9,11 @@ export const FormSelect = ({ label, options, selectedOption, handleOptionChange 
 
   // Map over options and create an option element for each
   const optionsList = options.map((option) => {
-    return <option key={option.value} value={option.value}>{option.label}</option>;
+    return (
+      <option key={option.value} value={option.value}>
+        {option.label}
+      </option>
+    );
   });
 
   return (
@@ -29,4 +33,15 @@ FormSelect.defaultProps = {
     { value: 'option3', label: 'Option 3' },
   ],
   label: 'Select',
+};
+FormSelect.propTypes = {
+  label: PropTypes.string,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    })
+  ),
+  selectedOption: PropTypes.string.isRequired,
+  handleOptionChange: PropTypes.func.isRequired,
 };
