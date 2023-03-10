@@ -7,6 +7,8 @@ import { Home } from './pages/Home';
 // STYLES
 import { GlobalStyles } from './styles/GlobalStyles';
 import { theme } from './styles/Theme';
+
+// COMPONENTS
 import { NavBar } from './components/Navigation';
 
 function App() {

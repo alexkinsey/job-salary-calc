@@ -22,7 +22,6 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 14px;
     color: ${({ theme }) => theme.colors.textBlack};
     background-color: ${({ theme }) => theme.colors.background};
-    line-height: 1;
   }
 
   h1, h2, h3, h4, h5, h6, p, ul, figure, blockquote, dl, dd {

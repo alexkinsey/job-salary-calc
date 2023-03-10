@@ -17,8 +17,14 @@ export const NavContent = styled.div`
   gap: 2em;
   width: 100%;
   max-width: ${({ theme }) => theme.sizes.lg};
+
+  /* before a screen size of 785 the links should display as flex with space around each link*/
   @media (max-width: 785px) {
     justify-content: space-around;
+  }
+  /* add padding to the nav title and links to mach the padding of the page content */
+  @media (min-width: ${({ theme }) => theme.sizes.lg}) {
+    padding: 0 20px;
   }
 `;
 
@@ -26,11 +32,12 @@ export const NavTitle = styled.h2`
   ${font.heading};
   color: ${({ theme }) => theme.colors.textWhite};
   flex-grow: 1;
-  @media (max-width: 785px) {
+
+  /* hide the title when the screen is 777 or smaller */
+  @media (max-width: 777px) {
     display: none;
   }
 `;
-
 
 export const NavLink = styled.a`
   ${font.normal};

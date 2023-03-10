@@ -1,10 +1,14 @@
 import { css } from 'styled-components';
 
+// This file sets up the theme for the app
+// The theme is used to set the colors, fonts, and sizes for the app
+// The theme is then used in the styled components to set the styles for the app
+
 const size = {
   xs: '375px', // for small screen mobile
   sm: '575px', // for mobile screen
   md: '900px', // for tablets
-  lg: '1280px', // for laptops
+  lg: '1024px', // for laptops
   xl: '1440px', // for desktop / monitors
 };
 
@@ -17,18 +21,6 @@ export const theme = {
     background: '#fff',
     textBlack: '#1d1d1f',
     textWhite: '#f5f5f7',
-    // primaryTextColor: '#1d1d1f',
-    // secondaryTextColor: '#777777',
-    // inputPlaceholder: '#C7C7C7',
-    // darkGrayText: '#303030',
-    // darkText: '#1A1A1A',
-    // black: '#000',
-    // white: '#fff',
-    // dark: '',
-    // medium: '',
-    // light: '',
-    // danger: '',
-    // success: '#66A15A',
   },
   fonts: {
     sanSerif: 'Open Sans',
@@ -74,7 +66,7 @@ export const font = {
   `,
   heading: css`
     font-family: ${({ theme }) => theme.fonts.sanSerif};
-    font-weight: 400;
+    font-weight: 600;
     text-transform: uppercase;
   `,
   subheading: css`
