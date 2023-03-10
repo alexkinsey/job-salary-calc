@@ -1,13 +1,6 @@
 import styled from 'styled-components';
 import { StyledTitle } from '../../components/Text/Title/style';
 
-export const HomeContainer = styled.main`
-  max-width: ${({ theme }) => theme.sizes.lg};
-  min-width: ${({ theme }) => theme.sizes.xs};
-  padding: 0 20px;
-  margin: 0 auto;
-`;
-
 export const BannerContainer = styled.header`
   position: relative;
   
@@ -17,14 +10,14 @@ export const BannerContainer = styled.header`
     left: calc(-50vw + 50%);
   }
 
-  /* specific styling for the heading inside the image */
+  /* specific styling for the title inside the image */
   & ${StyledTitle} {
     position: absolute;
     bottom: 0;
     margin: 1rem 2.5%;
 
     color: ${({ theme }) => theme.colors.textWhite};
-    text-shadow: 0 0 10px ${({ theme }) => theme.colors.textBlack};
+    text-shadow: 0 2px 10px black;
   }
 `;
 
@@ -35,4 +28,5 @@ export const BannerImage = styled.img`
 `;
 
 export const Section = styled.section`
+  margin: 0 0 2rem 0;
 `;

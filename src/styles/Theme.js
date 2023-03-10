@@ -21,6 +21,9 @@ export const theme = {
     textBlack: '#2e3742',
     textGrey: '#5b6876',
     textWhite: '#f9f9f9',
+    white: '#ffffff',
+    black: '#000000',
+    grey: '#e0e0e0',
   },
   fonts: {
     sanSerif: 'Open Sans',
