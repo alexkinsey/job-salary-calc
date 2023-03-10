@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input, Label } from './style';
 
-// This component takes in a type for the input, label, and placeholder
+// This component takes in a type, label, placeholder, value, and onChange function
 export const FormInput = ({ type, label, placeholder, value, onChange }) => {
   // Replace spaces with dashes
   let labelId = label.replace(/\s+/g, '-');

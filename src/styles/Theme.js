@@ -27,6 +27,37 @@ export const theme = {
   },
   fonts: {
     sanSerif: 'Open Sans',
+    light: css`
+      font-family: ${({ theme }) => theme.fonts.sanSerif};
+      font-weight: 200;
+    `,
+    normal: css`
+      font-family: ${({ theme }) => theme.fonts.sanSerif};
+      font-weight: 400;
+    `,
+    medium: css`
+      font-family: ${({ theme }) => theme.fonts.sanSerif};
+      font-weight: 500;
+    `,
+    bold: css`
+      font-family: ${({ theme }) => theme.fonts.sanSerif};
+      font-weight: 700;
+    `,
+    title: css`
+      font-family: ${({ theme }) => theme.fonts.sanSerif};
+      font-weight: 700;
+      text-transform: uppercase;
+    `,
+    heading: css`
+      font-family: ${({ theme }) => theme.fonts.sanSerif};
+      font-weight: 600;
+      text-transform: uppercase;
+    `,
+    subheading: css`
+      font-family: ${({ theme }) => theme.fonts.sanSerif};
+      font-weight: 400;
+      text-transform: uppercase;
+    `,
   },
   sizes: {
     xs: `${size.xs}`,
@@ -34,7 +65,7 @@ export const theme = {
     md: `${size.md}`,
     lg: `${size.lg}`,
     xl: `${size.xl}`,
-  }
+  },
 };
 
 export const device = {
@@ -43,38 +74,4 @@ export const device = {
   md: `(max-width: ${size.md})`,
   lg: `(max-width: ${size.lg})`,
   xl: `(max-width: ${size.xl})`,
-};
-
-export const font = {
-  light: css`
-    font-family: ${({ theme }) => theme.fonts.sanSerif};
-    font-weight: 200;
-  `,
-  normal: css`
-    font-family: ${({ theme }) => theme.fonts.sanSerif};
-    font-weight: 400;
-  `,
-  medium: css`
-    font-family: ${({ theme }) => theme.fonts.sanSerif};
-    font-weight: 500;
-  `,
-  bold: css`
-    font-family: ${({ theme }) => theme.fonts.sanSerif};
-    font-weight: 700;
-  `,
-  title: css`
-    font-family: ${({ theme }) => theme.fonts.sanSerif};
-    font-weight: 700;
-    text-transform: uppercase;
-  `,
-  heading: css`
-    font-family: ${({ theme }) => theme.fonts.sanSerif};
-    font-weight: 600;
-    text-transform: uppercase;
-  `,
-  subheading: css`
-    font-family: ${({ theme }) => theme.fonts.sanSerif};
-    font-weight: 400;
-    text-transform: uppercase;
-  `,
 };

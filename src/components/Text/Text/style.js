@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { font } from '../../../styles/Theme';
 
 export const StyledText = styled.p`
-  ${font.normal}
+  ${({ theme }) => theme.fonts.normal};
   color: ${({ theme }) => theme.colors.textGrey};
   margin: 1rem 0;
 `;

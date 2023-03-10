@@ -8,5 +8,9 @@ export const StyledForm = styled.form`
   border: 1px solid ${({ theme }) => theme.colors.grey};
   border-radius: 5px;
   margin: 1rem 0;
-  width: 350px;
+  max-width: 350px;
+
+  @media (max-width: ${({ theme }) => theme.sizes.sm}) {
+    max-width: 100%;
+  }
 `;

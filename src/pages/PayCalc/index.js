@@ -1,4 +1,6 @@
 import { useState } from 'react';
+
+// COMPONENTS
 import { Form } from '../../components/Form';
 import { FormInput } from '../../components/Form/FormInput';
 import { FormSelect } from '../../components/Form/FormSelect';
@@ -34,13 +36,6 @@ export const PayCalc = () => {
         Please enter the details for each field and the result will be shown below. You can generate multiple results by
         pressing the button.
       </Text>
-      {/* <Form>
-        <FormInput type="text" label="Job Title" placeholder="Enter job title" />
-        <FormInput type="number" label="Pay Amount" placeholder="Enter number" />
-        <FormSelect label='Pay Period' options={PayPeriods}/>
-        <FormInput type="number" label="Hours per Week" placeholder="Enter number" />
-        <button type="submit">Calculate</button>
-      </Form> */}
       <Form onSubmit={handleSubmit}>
         <FormInput
           type="text"

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { font } from '../../styles/Theme';
 
 export const NavBarBackground = styled.nav`
   display: flex;
@@ -29,7 +28,7 @@ export const NavContent = styled.div`
 `;
 
 export const NavTitle = styled.h2`
-  ${font.heading};
+  ${({ theme }) => theme.fonts.title};
   color: ${({ theme }) => theme.colors.textWhite};
   flex-grow: 1;
 
@@ -40,7 +39,7 @@ export const NavTitle = styled.h2`
 `;
 
 export const NavLink = styled.a`
-  ${font.normal};
+  ${({ theme }) => theme.fonts.normal};
   color: ${({ theme }) => theme.colors.textWhite};
 
   :hover {
