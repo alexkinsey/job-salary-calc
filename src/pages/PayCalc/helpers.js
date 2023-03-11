@@ -1,26 +1,28 @@
-export function calculatePay(amount, payPeriod, hoursPerWeek) {
+// This file contains helper functions for the PayCalc page
+// This function calculates the pay and returns an object with the results
+export function calculatePay(payAmount, payPeriod, hoursPerWeek) {
   let hourlyRate, weeklyRate, monthlyRate, yearlyRate;
 
   if (payPeriod === 'hourly') {
-    hourlyRate = parseFloat(amount);
-    weeklyRate = amount * hoursPerWeek;
-    monthlyRate = (amount * hoursPerWeek * 52) / 12;
-    yearlyRate = amount * hoursPerWeek * 52;
+    hourlyRate = parseFloat(payAmount);
+    weeklyRate = payAmount * hoursPerWeek;
+    monthlyRate = (payAmount * hoursPerWeek * 52) / 12;
+    yearlyRate = payAmount * hoursPerWeek * 52;
   } else if (payPeriod === 'weekly') {
-    hourlyRate = amount / hoursPerWeek;
-    weeklyRate = parseFloat(amount);
-    monthlyRate = (amount * 52) / 12;
-    yearlyRate = amount * 52;
+    hourlyRate = payAmount / hoursPerWeek;
+    weeklyRate = parseFloat(payAmount);
+    monthlyRate = (payAmount * 52) / 12;
+    yearlyRate = payAmount * 52;
   } else if (payPeriod === 'monthly') {
-    hourlyRate = (amount * 12) / (hoursPerWeek * 52);
-    weeklyRate = (amount * 12) / 52;
-    monthlyRate = parseFloat(amount);
-    yearlyRate = amount * 12;
+    hourlyRate = (payAmount * 12) / (hoursPerWeek * 52);
+    weeklyRate = (payAmount * 12) / 52;
+    monthlyRate = parseFloat(payAmount);
+    yearlyRate = payAmount * 12;
   } else if (payPeriod === 'yearly') {
-    hourlyRate = amount / (hoursPerWeek * 52);
-    weeklyRate = amount / 52;
-    monthlyRate = amount / 12;
-    yearlyRate = parseFloat(amount);
+    hourlyRate = payAmount / (hoursPerWeek * 52);
+    weeklyRate = payAmount / 52;
+    monthlyRate = payAmount / 12;
+    yearlyRate = parseFloat(payAmount);
   }
 
   hourlyRate = hourlyRate.toFixed(2);

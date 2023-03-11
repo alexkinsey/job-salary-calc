@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // COMPONENTS
 import { PageBody } from '../../components/Layout/PageBody';
@@ -17,15 +17,31 @@ export const PayCalc = () => {
 
   const [jobTitle, setJobTitle] = useState('');
   const [payAmount, setPayAmount] = useState('');
-  const [selectedPayPeriod, setSelectedPayPeriod] = useState(payPeriods[0].value);
+  const [selectedPayPeriod, setSelectedPayPeriod] = useState('Select an option');
   const handlePayPeriodChange = (event) => {
     setSelectedPayPeriod(event.target.value);
   };
   const [hoursPerWeek, setHoursPerWeek] = useState('');
 
+  const [results, setResults] = useState([]);
+  useEffect(() => {
+    const session = sessionStorage.getItem("results");
+    if (session.length > 0){
+      setResults(JSON.parse(session));
+    } else {
+      setResults([]);
+    }
+  }, []);
+  useEffect(() => {
+    if (results.length > 0) {
+    sessionStorage.setItem("results", JSON.stringify(results));
+    } 
+  }, [results]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(calculatePay(payAmount, selectedPayPeriod, hoursPerWeek));
+    const result = { jobTitle, ...calculatePay(payAmount, selectedPayPeriod, hoursPerWeek) };
+    setResults([...results, result]);
   };
 
   return (
@@ -47,6 +63,22 @@ export const PayCalc = () => {
         hoursPerWeek={hoursPerWeek}
         setHoursPerWeek={setHoursPerWeek}
       />
+      {results.length > 0 && (
+        <div>
+          <h2>Results</h2>
+          <ul>
+            {results.map((result, index) => (
+              <li key={index}>
+                <h3>{result.jobTitle}</h3>
+                <p>Hourly Rate: {result.hourlyRate}</p>
+                <p>Weekly Rate: {result.weeklyRate}</p>
+                <p>Monthly Rate: {result.monthlyRate}</p>
+                <p>Yearly Rate: {result.yearlyRate}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </PageBody>
   );
 };
