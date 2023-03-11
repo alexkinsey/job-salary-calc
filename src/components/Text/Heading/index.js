@@ -19,7 +19,6 @@ Heading.propTypes = {
   children: PropTypes.node.isRequired,
   showUnderline: PropTypes.bool,
 };
-
 // Set default props
 Heading.defaultProps = {
   showUnderline: false,

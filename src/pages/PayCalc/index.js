@@ -31,8 +31,9 @@ export const PayCalc = () => {
   const [results, setResults] = useState([]);
   // This useEffect is used to get the results from session storage on page load
   useEffect(() => {
+    console.log('hit 1');
     const session = sessionStorage.getItem('results');
-    if (session.length > 0) {
+    if (session?.length > 0) {
       setResults(JSON.parse(session));
     } else {
       setResults([]);
@@ -40,15 +41,22 @@ export const PayCalc = () => {
   }, []);
   // This useEffect is used to set the results to session storage when the results state changes
   useEffect(() => {
-    if (results.length > 0) {
-      sessionStorage.setItem('results', JSON.stringify(results));
-    }
+    console.log('hit 2');
+    // if (results.length > 0) {
+    sessionStorage.setItem('results', JSON.stringify(results));
+    // }
   }, [results]);
 
   // This function is used to handle the form submission, calculate the pay, and add the result to the results state
   const handleSubmit = (e) => {
     e.preventDefault();
-    const result = { jobTitle, ...calculatePay(payAmount, selectedPayPeriod, hoursPerWeek) };
+    const result = {
+      jobTitle,
+      hoursPerWeek,
+      selectedPayPeriod,
+      payAmount,
+      ...calculatePay(payAmount, selectedPayPeriod, hoursPerWeek),
+    };
     setResults([...results, result]);
   };
 
@@ -56,8 +64,9 @@ export const PayCalc = () => {
     <PageBody>
       <Title>Pay Calculator</Title>
       <Text>
-        Please enter the details for each field and the result will be shown below. You can generate multiple results by
-        pressing the button.
+        Take a moment to provide information your information below. Once you have completed the form, you will be able
+        to see the results. You can enter in information for as many jobs as you would like. The results will be saved
+        in your browser's session storage.
       </Text>
       <PayCalcForm
         handleSubmit={handleSubmit}
