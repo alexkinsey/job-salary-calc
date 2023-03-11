@@ -1,26 +1,25 @@
 import PropTypes from 'prop-types';
-import { StyledTitle } from './style';
+import { StyledSubheading } from './style';
 import { HR } from '../HR.style';
-
 
 // This component takes in a boolean value for showUnderline
 // If showUnderline is true, an underline will display
-export const Title = ({ children, showUnderline }) => {
+export const Subheading = ({ children, showUnderline }) => {
   return (
-    <StyledTitle>
+    <StyledSubheading>
       {children}
       {showUnderline && <HR />}
-    </StyledTitle>
+    </StyledSubheading>
   );
 };
 
 // Set prop types
-Title.propTypes = {
+Subheading.propTypes = {
   children: PropTypes.node.isRequired,
   showUnderline: PropTypes.bool,
 };
 
 // Set default props
-Title.defaultProps = {
+Subheading.defaultProps = {
   showUnderline: false,
 };

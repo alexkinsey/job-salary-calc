@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
+import { Card } from '../../components/Card';
 
 // COMPONENTS
 import { PageBody } from '../../components/Layout/PageBody';
+import { Heading } from '../../components/Text/Heading';
 import { Text } from '../../components/Text/Text';
 import { Title } from '../../components/Text/Title';
 import { calculatePay } from './helpers';
 import { PayCalcForm } from './PayCalcForm';
 
 export const PayCalc = () => {
+  // This is the array of options for the pay period select
   const payPeriods = [
     { value: 'hourly', label: 'Hourly' },
     { value: 'weekly', label: 'Weekly' },
@@ -15,6 +18,7 @@ export const PayCalc = () => {
     { value: 'yearly', label: 'Yearly' },
   ];
 
+  // State for the form is set up here
   const [jobTitle, setJobTitle] = useState('');
   const [payAmount, setPayAmount] = useState('');
   const [selectedPayPeriod, setSelectedPayPeriod] = useState('Select an option');
@@ -23,21 +27,25 @@ export const PayCalc = () => {
   };
   const [hoursPerWeek, setHoursPerWeek] = useState('');
 
+  // Session Storage of the results is set up here
   const [results, setResults] = useState([]);
+  // This useEffect is used to get the results from session storage on page load
   useEffect(() => {
-    const session = sessionStorage.getItem("results");
-    if (session.length > 0){
+    const session = sessionStorage.getItem('results');
+    if (session.length > 0) {
       setResults(JSON.parse(session));
     } else {
       setResults([]);
     }
   }, []);
+  // This useEffect is used to set the results to session storage when the results state changes
   useEffect(() => {
     if (results.length > 0) {
-    sessionStorage.setItem("results", JSON.stringify(results));
-    } 
+      sessionStorage.setItem('results', JSON.stringify(results));
+    }
   }, [results]);
 
+  // This function is used to handle the form submission, calculate the pay, and add the result to the results state
   const handleSubmit = (e) => {
     e.preventDefault();
     const result = { jobTitle, ...calculatePay(payAmount, selectedPayPeriod, hoursPerWeek) };
@@ -65,18 +73,10 @@ export const PayCalc = () => {
       />
       {results.length > 0 && (
         <div>
-          <h2>Results</h2>
-          <ul>
-            {results.map((result, index) => (
-              <li key={index}>
-                <h3>{result.jobTitle}</h3>
-                <p>Hourly Rate: {result.hourlyRate}</p>
-                <p>Weekly Rate: {result.weeklyRate}</p>
-                <p>Monthly Rate: {result.monthlyRate}</p>
-                <p>Yearly Rate: {result.yearlyRate}</p>
-              </li>
-            ))}
-          </ul>
+          <Heading showUnderline>Results</Heading>
+          {results.map((result, index) => (
+            <Card key={index} {...result} />
+          ))}
         </div>
       )}
     </PageBody>

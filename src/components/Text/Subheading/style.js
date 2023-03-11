@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const StyledHeading = styled.h2`
-  ${({ theme }) => theme.fonts.heading};
+export const StyledSubheading = styled.h3`
+  ${({ theme }) => theme.fonts.subheading};
   color: ${({ theme }) => theme.colors.text};
-  font-size: 22px;
+  font-size: 18px;
   margin: 1rem 0 0 0;
 `;
