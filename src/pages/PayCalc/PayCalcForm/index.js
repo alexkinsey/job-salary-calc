@@ -2,6 +2,7 @@ import { Form } from '../../../components/Form';
 import { FormButton } from '../../../components/Form/FormButton';
 import { FormInput } from '../../../components/Form/FormInput';
 import { FormSelect } from '../../../components/Form/FormSelect';
+import { parseCurrency, parseHoursPerWeek, toTitleCase } from '../helpers';
 
 // This component handles the form for the Pay Calculator page
 export const PayCalcForm = ({
@@ -21,19 +22,16 @@ export const PayCalcForm = ({
       <FormInput
         type="text"
         label="Job Title"
-        placeholder="Enter job title"
+        placeholder="Enter a job title"
         value={jobTitle}
-        onChange={(e) => setJobTitle(e.target.value)}
+        onChange={(e) => setJobTitle(toTitleCase(e.target.value))}
       />
       <FormInput
-        type="number"
+        type="text"
         label="Pay Amount"
-        placeholder="Enter number"
+        placeholder="£3200.00"
         value={payAmount}
-        onChange={(e) => setPayAmount(e.target.value)}
-        min="0"
-        max="1000000000000"
-        step="0.01"
+        onChange={(e) => setPayAmount(parseCurrency(e.target.value))}
       />
       <FormSelect
         label="Pay Period"
@@ -44,9 +42,9 @@ export const PayCalcForm = ({
       <FormInput
         type="number"
         label="Hours per Week"
-        placeholder="Enter number"
+        placeholder="35"
         value={hoursPerWeek}
-        onChange={(e) => setHoursPerWeek(e.target.value)}
+        onChange={(e) => setHoursPerWeek(parseHoursPerWeek(e.target.value))}
         min="0"
         max="168"
       />

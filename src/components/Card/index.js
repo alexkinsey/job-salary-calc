@@ -18,7 +18,7 @@ export const Card = ({
     <StyledCard>
       <Subheading>{jobTitle}</Subheading>
       <Text>
-        Working <b>{hoursPerWeek}</b> hours a week for <b>£{payAmount}</b> per <b>{selectedPayPeriod.slice(0, -2)}</b>{' '}
+        Working <b>{hoursPerWeek}</b> hours a week for <b>{payAmount}</b> per <b>{selectedPayPeriod.slice(0, -2)}</b>{' '}
         breaks down into:
       </Text>
       <Text>Hourly Rate: £{hourlyRate}</Text>

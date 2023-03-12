@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Input, Label } from './style';
 
-// This component takes in a type, label, placeholder, value, and onChange function
+// This component takes in a label, and any other props that an input element can take
 export const FormInput = ({ label, ...props}) => {
   // Replace spaces with dashes
   let labelId = label.replace(/\s+/g, '-');
