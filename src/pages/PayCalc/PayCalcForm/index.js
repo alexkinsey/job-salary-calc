@@ -12,7 +12,7 @@ export const PayCalcForm = ({
   setPayAmount,
   payPeriods,
   selectedPayPeriod,
-  handlePayPeriodChange,
+  setSelectedPayPeriod,
   hoursPerWeek,
   setHoursPerWeek,
 }) => {
@@ -31,12 +31,15 @@ export const PayCalcForm = ({
         placeholder="Enter number"
         value={payAmount}
         onChange={(e) => setPayAmount(e.target.value)}
+        min="0"
+        max="1000000000000"
+        step="0.01"
       />
       <FormSelect
         label="Pay Period"
         options={payPeriods}
         selectedOption={selectedPayPeriod}
-        handleOptionChange={handlePayPeriodChange}
+        handleOptionChange={(e) => setSelectedPayPeriod(e.target.value)}
       />
       <FormInput
         type="number"
@@ -44,6 +47,8 @@ export const PayCalcForm = ({
         placeholder="Enter number"
         value={hoursPerWeek}
         onChange={(e) => setHoursPerWeek(e.target.value)}
+        min="0"
+        max="168"
       />
       <FormButton />
     </Form>

@@ -22,9 +22,6 @@ export const PayCalc = () => {
   const [jobTitle, setJobTitle] = useState('');
   const [payAmount, setPayAmount] = useState('');
   const [selectedPayPeriod, setSelectedPayPeriod] = useState('Select an option');
-  const handlePayPeriodChange = (event) => {
-    setSelectedPayPeriod(event.target.value);
-  };
   const [hoursPerWeek, setHoursPerWeek] = useState('');
 
   // Session Storage of the results is set up here
@@ -33,19 +30,12 @@ export const PayCalc = () => {
   useEffect(() => {
     console.log('hit 1');
     const session = sessionStorage.getItem('results');
-    if (session?.length > 0) {
+    if (session) {
       setResults(JSON.parse(session));
     } else {
       setResults([]);
     }
   }, []);
-  // This useEffect is used to set the results to session storage when the results state changes
-  useEffect(() => {
-    console.log('hit 2');
-    // if (results.length > 0) {
-    sessionStorage.setItem('results', JSON.stringify(results));
-    // }
-  }, [results]);
 
   // This function is used to handle the form submission, calculate the pay, and add the result to the results state
   const handleSubmit = (e) => {
@@ -58,6 +48,7 @@ export const PayCalc = () => {
       ...calculatePay(payAmount, selectedPayPeriod, hoursPerWeek),
     };
     setResults([...results, result]);
+    sessionStorage.setItem('results', JSON.stringify([...results, result]));
   };
 
   return (
@@ -76,7 +67,7 @@ export const PayCalc = () => {
         setPayAmount={setPayAmount}
         payPeriods={payPeriods}
         selectedPayPeriod={selectedPayPeriod}
-        handlePayPeriodChange={handlePayPeriodChange}
+        setSelectedPayPeriod={setSelectedPayPeriod}
         hoursPerWeek={hoursPerWeek}
         setHoursPerWeek={setHoursPerWeek}
       />
