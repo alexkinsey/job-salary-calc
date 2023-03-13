@@ -21,10 +21,10 @@ export const Card = ({
         Working <b>{hoursPerWeek}</b> hours a week for <b>{payAmount}</b> per <b>{selectedPayPeriod.slice(0, -2)}</b>{' '}
         breaks down into:
       </Text>
-      <Text>Hourly Rate: £{hourlyRate}</Text>
-      <Text>Weekly Rate: £{weeklyRate}</Text>
-      <Text>Monthly Rate: £{monthlyRate}</Text>
-      <Text>Yearly Rate: £{yearlyRate}</Text>
+      <Text>£{hourlyRate} per hour</Text>
+      <Text>£{weeklyRate} per week</Text>
+      <Text>£{monthlyRate} per month</Text>
+      <Text>£{yearlyRate} per year</Text>
     </StyledCard>
   );
 };

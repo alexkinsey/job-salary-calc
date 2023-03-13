@@ -2,7 +2,7 @@
 import { BannerContainer, BannerImage, Section } from './style';
 
 // IMAGES
-import bannerImage from '../../images/banner.jpg';
+import bannerImage from '../../assets/images/banner.jpg';
 
 // COMPONENTS
 import { PageBody } from '../../components/Layout/PageBody';

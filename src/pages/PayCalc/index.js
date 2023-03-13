@@ -1,13 +1,18 @@
 import { useState, useEffect } from 'react';
-import { Card } from '../../components/Card';
 
 // COMPONENTS
 import { PageBody } from '../../components/Layout/PageBody';
 import { Heading } from '../../components/Text/Heading';
 import { Text } from '../../components/Text/Text';
 import { Title } from '../../components/Text/Title';
-import { calculatePay } from './helpers';
 import { PayCalcForm } from './PayCalcForm';
+import { Card } from '../../components/Card';
+
+// STYLES
+import { CardContainer } from './style';
+
+// HELPERS
+import { calculatePay } from './helpers/calculatePay';
 
 export const PayCalc = () => {
   // This is the array of options for the pay period select
@@ -71,13 +76,15 @@ export const PayCalc = () => {
         hoursPerWeek={hoursPerWeek}
         setHoursPerWeek={setHoursPerWeek}
       />
-      {results.length > 0 && (
-        <div>
-          <Heading showUnderline>Results</Heading>
+      <Heading showUnderline>Results</Heading>
+      {results.length > 0 ? (
+        <CardContainer>
           {results.map((result, index) => (
             <Card key={index} {...result} />
           ))}
-        </div>
+        </CardContainer>
+      ) : (
+        <Text>Your results will appear here</Text>
       )}
     </PageBody>
   );

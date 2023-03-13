@@ -1,8 +1,13 @@
+// COMPONENTS
 import { Form } from '../../../components/Form';
 import { FormButton } from '../../../components/Form/FormButton';
 import { FormInput } from '../../../components/Form/FormInput';
 import { FormSelect } from '../../../components/Form/FormSelect';
-import { parseCurrency, parseHoursPerWeek, toTitleCase } from '../helpers';
+
+// HELPERS
+import { parseCurrency } from '../helpers/parseCurrency';
+import { parseHoursPerWeek } from '../helpers/parseHoursPerWeek';
+import { toTitleCase } from '../helpers/toTitleCase';
 
 // This component handles the form for the Pay Calculator page
 export const PayCalcForm = ({
