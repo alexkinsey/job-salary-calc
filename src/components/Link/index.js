@@ -1,5 +1,9 @@
 import PropTypes from 'prop-types';
+
+// ICONS
 import { FiExternalLink } from 'react-icons/fi';
+
+// STYLES
 import { LinkContainer, LinkText } from './style';
 
 // This components takes in a location which should be a URL and a boolean value for isExternal

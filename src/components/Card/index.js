@@ -1,10 +1,14 @@
 import PropTypes from 'prop-types';
 
-import { StyledCard } from './styles';
+import { DeleteButton, StyledCard } from './styles';
+
+import { IoCloseCircleOutline, IoCloseCircleSharp } from 'react-icons/io5';
+
 import { Subheading } from '../Text/Subheading';
 import { Text } from '../Text/Text';
 
 export const Card = ({
+  index,
   jobTitle,
   hoursPerWeek,
   selectedPayPeriod,
@@ -13,6 +17,7 @@ export const Card = ({
   weeklyRate,
   monthlyRate,
   yearlyRate,
+  handleDelete,
 }) => {
   return (
     <StyledCard>
@@ -25,6 +30,10 @@ export const Card = ({
       <Text>£{weeklyRate} per week</Text>
       <Text>£{monthlyRate} per month</Text>
       <Text>£{yearlyRate} per year</Text>
+      <DeleteButton onClick={() => handleDelete(index)}>
+        <IoCloseCircleOutline id="x-outline"/>
+        <IoCloseCircleSharp id="x-fill"/>
+      </DeleteButton>
     </StyledCard>
   );
 };

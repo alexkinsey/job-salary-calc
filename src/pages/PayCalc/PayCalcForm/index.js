@@ -30,19 +30,23 @@ export const PayCalcForm = ({
         placeholder="Enter a job title"
         value={jobTitle}
         onChange={(e) => setJobTitle(toTitleCase(e.target.value))}
+        required
       />
       <FormInput
         type="text"
         label="Pay Amount"
         placeholder="£3200.00"
+        maxLength="10"
         value={payAmount}
         onChange={(e) => setPayAmount(parseCurrency(e.target.value))}
+        required
       />
       <FormSelect
         label="Pay Period"
         options={payPeriods}
         selectedOption={selectedPayPeriod}
         handleOptionChange={(e) => setSelectedPayPeriod(e.target.value)}
+        required
       />
       <FormInput
         type="number"
@@ -52,6 +56,7 @@ export const PayCalcForm = ({
         onChange={(e) => setHoursPerWeek(parseHoursPerWeek(e.target.value))}
         min="0"
         max="168"
+        required
       />
       <FormButton />
     </Form>

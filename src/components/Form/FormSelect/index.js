@@ -3,7 +3,7 @@ import { Select, Label } from './style';
 
 // This component takes in a label, options, selectedOption, and handleOptionChange function
 // Options is an array of objects with a value and label
-export const FormSelect = ({ label, options, selectedOption, handleOptionChange }) => {
+export const FormSelect = ({ label, options, selectedOption, handleOptionChange, ...props }) => {
   // Replace spaces with dashes
   let labelId = label.replace(/\s+/g, '-');
 
@@ -19,8 +19,8 @@ export const FormSelect = ({ label, options, selectedOption, handleOptionChange 
   return (
     <div>
       <Label htmlFor={labelId}>{label}</Label>
-      <Select id={labelId} value={selectedOption} onChange={handleOptionChange} >
-        <option key="0" value="Select an option" disabled hidden>Select an option</option>
+      <Select id={labelId} value={selectedOption} onChange={handleOptionChange} {...props} >
+        {/* <option key="0" value="Select an option" disabled hidden>Select an option</option> */}
         {optionsList}
       </Select>
     </div>

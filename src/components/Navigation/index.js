@@ -5,9 +5,9 @@ export const NavBar = () => {
     <NavBarBackground>
       <NavContent>
         <NavTitle>Your Career and Pay Calculator</NavTitle>
-        <NavLink href="/">Home</NavLink>
-        <NavLink href="/pay-calc">Pay Calculator</NavLink>
-        <NavLink href="/vacancy-search">Vacancy Search</NavLink>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/pay-calc">Pay Calculator</NavLink>
+        <NavLink to="/vacancy-search">Vacancy Search</NavLink>
       </NavContent>
     </NavBarBackground>
   );

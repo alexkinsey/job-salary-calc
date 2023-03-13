@@ -37,9 +37,17 @@ export const GlobalStyles = createGlobalStyle`
     cursor: pointer;
   }
 
+  button:focus,
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+  }
+
   a {
     color: ${({ theme }) => theme.colors.primary};
     text-decoration: none;
+    transition: all 0.2s ease-in-out;
     :hover {
       text-decoration: underline;
       color: ${({ theme }) => theme.colors.primaryHover};

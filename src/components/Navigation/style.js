@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { Link } from 'react-router-dom';
+
 export const NavBarBackground = styled.nav`
   display: flex;
   justify-content: center;
@@ -38,7 +40,8 @@ export const NavTitle = styled.h2`
   }
 `;
 
-export const NavLink = styled.a`
+// this specifically styles a react router link to prevent the page reloading when the link is clicked
+export const NavLink = styled(Link)`
   ${({ theme }) => theme.fonts.normal};
   color: ${({ theme }) => theme.colors.textWhite};
 

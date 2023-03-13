@@ -26,7 +26,7 @@ export const PayCalc = () => {
   // State for the form is set up here
   const [jobTitle, setJobTitle] = useState('');
   const [payAmount, setPayAmount] = useState('');
-  const [selectedPayPeriod, setSelectedPayPeriod] = useState('Select an option');
+  const [selectedPayPeriod, setSelectedPayPeriod] = useState('yearly');
   const [hoursPerWeek, setHoursPerWeek] = useState('');
 
   // Session Storage of the results is set up here
@@ -56,14 +56,25 @@ export const PayCalc = () => {
     sessionStorage.setItem('results', JSON.stringify([...results, result]));
   };
 
+  // This function is used to handle the deletion of a result
+  const handleDelete = (index) => {
+    const newResults = results.filter((result, i) => i !== index);
+    setResults(newResults);
+    sessionStorage.setItem('results', JSON.stringify(newResults));
+  };
+
   return (
     <PageBody>
-      <Title>Pay Calculator</Title>
-      <Text>
-        Take a moment to provide information your information below. Once you have completed the form, you will be able
-        to see the results. You can enter in information for as many jobs as you would like. The results will be saved
-        in your browser's session storage.
-      </Text>
+      <section>
+        <Title>Pay Calculator</Title>
+        <Text>
+          Take a moment to provide information your information below. Once you have completed the form, press
+          Calculate, and your results will appear in cards. You can enter in information for as many jobs as you 
+          like. The results will be saved in this browser tab. If you would like to clear a result, you
+          can do so by pressing the red X in the top right of the card.
+        </Text>
+      </section>
+
       <PayCalcForm
         handleSubmit={handleSubmit}
         jobTitle={jobTitle}
@@ -76,16 +87,18 @@ export const PayCalc = () => {
         hoursPerWeek={hoursPerWeek}
         setHoursPerWeek={setHoursPerWeek}
       />
-      <Heading showUnderline>Results</Heading>
-      {results.length > 0 ? (
-        <CardContainer>
-          {results.map((result, index) => (
-            <Card key={index} {...result} />
-          ))}
-        </CardContainer>
-      ) : (
-        <Text>Your results will appear here</Text>
-      )}
+      <section>
+        <Heading showUnderline>Results</Heading>
+        {results.length > 0 ? (
+          <CardContainer>
+            {results.map((result, index) => (
+              <Card key={index} index={index} {...result} handleDelete={handleDelete} />
+            ))}
+          </CardContainer>
+        ) : (
+          <Text>Your results will appear here</Text>
+        )}
+      </section>
     </PageBody>
   );
 };
