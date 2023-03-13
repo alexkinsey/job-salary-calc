@@ -2,14 +2,14 @@ import PropTypes from 'prop-types';
 import { Input, Label } from './style';
 
 // This component takes in a label, and any other props that an input element can take
-export const FormInput = ({ label, ...props}) => {
+export const FormInput = ({ label, ...props }) => {
   // Replace spaces with dashes
   let labelId = label.replace(/\s+/g, '-');
 
   return (
     <div>
       <Label htmlFor={labelId}>{label}</Label>
-      <Input id={labelId} {...props}/>
+      <Input id={labelId} {...props} />
     </div>
   );
 };

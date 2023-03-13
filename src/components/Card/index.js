@@ -31,8 +31,8 @@ export const Card = ({
       <Text>£{monthlyRate} per month</Text>
       <Text>£{yearlyRate} per year</Text>
       <DeleteButton onClick={() => handleDelete(index)}>
-        <IoCloseCircleOutline id="x-outline"/>
-        <IoCloseCircleSharp id="x-fill"/>
+        <IoCloseCircleOutline id="x-outline" />
+        <IoCloseCircleSharp id="x-fill" />
       </DeleteButton>
     </StyledCard>
   );

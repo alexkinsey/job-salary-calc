@@ -69,9 +69,9 @@ export const PayCalc = () => {
         <Title>Pay Calculator</Title>
         <Text>
           Take a moment to provide information your information below. Once you have completed the form, press
-          Calculate, and your results will appear in cards. You can enter in information for as many jobs as you 
-          like. The results will be saved in this browser tab. If you would like to clear a result, you
-          can do so by pressing the red X in the top right of the card.
+          Calculate, and your results will appear in cards. You can enter in information for as many jobs as you like.
+          The results will be saved in this browser tab. If you would like to clear a result, you can do so by pressing
+          the red X in the top right of the card.
         </Text>
       </section>
 

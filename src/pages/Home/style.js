@@ -3,7 +3,7 @@ import { StyledTitle } from '../../components/Text/Title/style';
 
 export const BannerContainer = styled.header`
   position: relative;
-  
+
   /* for screens smaller than the large size make the image span the whole width of the page */
   @media (max-width: ${({ theme }) => theme.sizes.lg}) {
     width: 100vw;

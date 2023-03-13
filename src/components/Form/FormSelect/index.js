@@ -19,7 +19,7 @@ export const FormSelect = ({ label, options, selectedOption, handleOptionChange,
   return (
     <div>
       <Label htmlFor={labelId}>{label}</Label>
-      <Select id={labelId} value={selectedOption} onChange={handleOptionChange} {...props} >
+      <Select id={labelId} value={selectedOption} onChange={handleOptionChange} {...props}>
         {/* <option key="0" value="Select an option" disabled hidden>Select an option</option> */}
         {optionsList}
       </Select>

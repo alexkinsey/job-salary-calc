@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const PageBody = styled.main`
   max-width: ${({ theme }) => theme.sizes.lg};
