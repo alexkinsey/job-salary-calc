@@ -53,7 +53,8 @@ export const theme = {
   sizes: {
     xs: '375px', // for small screen mobile
     sm: '575px', // for mobile screen
-    md: '900px', // for tablets
+    ms: '768px', // for small tablets
+    ml: '900px', // for large tablets
     lg: '1024px', // for laptops
     xl: '1440px', // for desktop / monitors
   },

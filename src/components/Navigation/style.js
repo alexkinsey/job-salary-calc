@@ -9,6 +9,7 @@ export const NavBarBackground = styled.nav`
   height: 60px;
   padding: 0 20px;
   min-width: ${({ theme }) => theme.sizes.xs};
+  width: 100%;
 `;
 
 export const NavContent = styled.div`

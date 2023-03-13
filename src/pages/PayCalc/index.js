@@ -9,7 +9,7 @@ import { PayCalcForm } from './PayCalcForm';
 import { Card } from '../../components/Card';
 
 // STYLES
-import { CardContainer } from './style';
+import { CardContainer, FormContainer } from './style';
 
 // HELPERS
 import { calculatePay } from './helpers/calculatePay';
@@ -65,28 +65,29 @@ export const PayCalc = () => {
 
   return (
     <PageBody>
-      <section>
-        <Title>Pay Calculator</Title>
+      <Title>Pay Calculator</Title>
+
+      <FormContainer>
+        <PayCalcForm
+          handleSubmit={handleSubmit}
+          jobTitle={jobTitle}
+          setJobTitle={setJobTitle}
+          payAmount={payAmount}
+          setPayAmount={setPayAmount}
+          payPeriods={payPeriods}
+          selectedPayPeriod={selectedPayPeriod}
+          setSelectedPayPeriod={setSelectedPayPeriod}
+          hoursPerWeek={hoursPerWeek}
+          setHoursPerWeek={setHoursPerWeek}
+        />
         <Text>
           Take a moment to provide information your information below. Once you have completed the form, press
           Calculate, and your results will appear in cards. You can enter in information for as many jobs as you like.
-          The results will be saved in this browser tab. If you would like to clear a result, you can do so by pressing
+          The results will be saved in this browser tab. If you would like to remove a result, you can do so by pressing
           the red X in the top right of the card.
         </Text>
-      </section>
+      </FormContainer>
 
-      <PayCalcForm
-        handleSubmit={handleSubmit}
-        jobTitle={jobTitle}
-        setJobTitle={setJobTitle}
-        payAmount={payAmount}
-        setPayAmount={setPayAmount}
-        payPeriods={payPeriods}
-        selectedPayPeriod={selectedPayPeriod}
-        setSelectedPayPeriod={setSelectedPayPeriod}
-        hoursPerWeek={hoursPerWeek}
-        setHoursPerWeek={setHoursPerWeek}
-      />
       <section>
         <Heading showUnderline>Results</Heading>
         {results.length > 0 ? (

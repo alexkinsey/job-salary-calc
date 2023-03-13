@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 // PAGES
 import { Home } from './pages/Home';
 import { PayCalc } from './pages/PayCalc';
+import { VacancySearch } from './pages/VacancySearch';
 
 // STYLES
 import { GlobalStyles } from './styles/GlobalStyles';
@@ -20,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pay-calc" element={<PayCalc />} />
-          <Route path="/vacancy-search" element={<Home />} />
+          <Route path="/vacancy-search" element={<VacancySearch />} />
         </Routes>
         <GlobalStyles />
       </Router>
