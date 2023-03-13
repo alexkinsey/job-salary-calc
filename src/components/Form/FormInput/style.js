@@ -9,6 +9,7 @@ export const Input = styled.input`
   display: block;
   padding: 0.5rem;
   border: 1px solid ${({ theme }) => theme.colors.grey};
+  color: ${({ theme }) => theme.colors.textBlack};
   border-radius: 5px;
   margin: 0.5rem 0;
   width: 100%;

@@ -3,15 +3,6 @@ import { css } from 'styled-components';
 // This file sets up the theme for the app
 // The theme is used to set the colors, fonts, and sizes for the app
 // The theme is then used in the styled components to set the styles for the app
-
-const size = {
-  xs: '375px', // for small screen mobile
-  sm: '575px', // for mobile screen
-  md: '900px', // for tablets
-  lg: '1024px', // for laptops
-  xl: '1440px', // for desktop / monitors
-};
-
 export const theme = {
   colors: {
     primary: '#f85000',
@@ -60,18 +51,10 @@ export const theme = {
     `,
   },
   sizes: {
-    xs: `${size.xs}`,
-    sm: `${size.sm}`,
-    md: `${size.md}`,
-    lg: `${size.lg}`,
-    xl: `${size.xl}`,
+    xs: '375px', // for small screen mobile
+    sm: '575px', // for mobile screen
+    md: '900px', // for tablets
+    lg: '1024px', // for laptops
+    xl: '1440px', // for desktop / monitors
   },
-};
-
-export const device = {
-  xs: `(max-width: ${size.xs})`,
-  sm: `(max-width: ${size.sm})`,
-  md: `(max-width: ${size.md})`,
-  lg: `(max-width: ${size.lg})`,
-  xl: `(max-width: ${size.xl})`,
 };

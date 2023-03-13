@@ -7,9 +7,11 @@ export const Label = styled.label`
 
 export const Select = styled.select`
   display: block;
-  padding: 0.5rem;
+  color: ${({ theme }) => theme.colors.textBlack};
+  background-color: ${({ theme }) => theme.colors.white};
   border: 1px solid ${({ theme }) => theme.colors.grey};
   border-radius: 5px;
   margin: 0.5rem 0;
+  padding: 0.5rem;
   width: 100%;
 `;
