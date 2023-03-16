@@ -28,6 +28,11 @@ export const PayCalc = () => {
   const [payAmount, setPayAmount] = useState('');
   const [selectedPayPeriod, setSelectedPayPeriod] = useState('yearly');
   const [hoursPerWeek, setHoursPerWeek] = useState('');
+  const [error, setError] = useState({
+    eJobTitle: '',
+    ePayAmount: '',
+    eHoursPerWeek: '',
+  });
 
   // Session Storage of the results is set up here
   const [results, setResults] = useState([]);
@@ -41,10 +46,24 @@ export const PayCalc = () => {
     }
   }, []);
 
+  // This function is used to validate the form
+  const validateForm = () => {
+    const errors = {
+      eJobTitle: !jobTitle.trim() ? 'Please enter a job title' : '',
+      ePayAmount: !payAmount || payAmount.length < 2 ? 'Please enter a valid amount' : '',
+      eHoursPerWeek: !hoursPerWeek ? 'Please enter hours worked per week' : '',
+    };
+
+    setError(errors);
+    return !Object.values(errors).some((error) => error);
+  };
+
   // This function is used to handle the form submission, calculate the pay, and add the result to the results state
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!jobTitle || !payAmount || payAmount.length < 2 || !selectedPayPeriod || !hoursPerWeek) return;
+    if (!validateForm()) {
+      return;
+    }
     const result = {
       jobTitle,
       hoursPerWeek,
@@ -79,6 +98,7 @@ export const PayCalc = () => {
           setSelectedPayPeriod={setSelectedPayPeriod}
           hoursPerWeek={hoursPerWeek}
           setHoursPerWeek={setHoursPerWeek}
+          error={error}
         />
         <Text>
           Take a moment to provide information your information below. Once you have completed the form, press

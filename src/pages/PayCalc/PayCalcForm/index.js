@@ -21,6 +21,7 @@ export const PayCalcForm = ({
   setSelectedPayPeriod,
   hoursPerWeek,
   setHoursPerWeek,
+  error
 }) => {
   return (
     <Form onSubmit={handleSubmit}>
@@ -30,7 +31,7 @@ export const PayCalcForm = ({
         placeholder="Enter a job title"
         value={jobTitle}
         onChange={(e) => setJobTitle(toTitleCase(e.target.value))}
-        required
+        error={error.eJobTitle}
       />
       <FormInput
         type="text"
@@ -39,7 +40,7 @@ export const PayCalcForm = ({
         maxLength="10"
         value={payAmount}
         onChange={(e) => setPayAmount(parseCurrency(e.target.value))}
-        required
+        error={error.ePayAmount}
       />
       <FormSelect
         label="Pay Period"
@@ -52,11 +53,11 @@ export const PayCalcForm = ({
         type="number"
         label="Hours per Week"
         placeholder="35"
-        value={hoursPerWeek}
-        onChange={(e) => setHoursPerWeek(parseHoursPerWeek(e.target.value))}
         min="0"
         max="168"
-        required
+        value={hoursPerWeek}
+        onChange={(e) => setHoursPerWeek(parseHoursPerWeek(e.target.value))}
+        error={error.eHoursPerWeek}
       />
       <FormButton />
     </Form>

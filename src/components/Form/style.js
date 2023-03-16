@@ -16,3 +16,9 @@ export const StyledForm = styled.form`
     max-width: 100%;
   }
 `;
+
+export const Error = styled.span`
+color: red;
+font-size: 0.8rem;
+margin-top: 0.25rem;
+`;
