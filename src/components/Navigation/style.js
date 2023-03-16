@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { Link } from 'react-router-dom';
 
-export const NavBarBackground = styled.nav`
+export const NavBarBackground = styled.header`
   display: flex;
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.secondary};
@@ -12,7 +12,7 @@ export const NavBarBackground = styled.nav`
   width: 100%;
 `;
 
-export const NavContent = styled.div`
+export const NavContent = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;

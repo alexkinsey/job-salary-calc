@@ -6,7 +6,7 @@ import { Heading } from '../../components/Text/Heading';
 import { Text } from '../../components/Text/Text';
 import { Title } from '../../components/Text/Title';
 import { PayCalcForm } from './PayCalcForm';
-import { Card } from '../../components/Card';
+import { Card } from '../../components/PayCard';
 
 // STYLES
 import { CardContainer, FormContainer } from './style';
@@ -33,7 +33,6 @@ export const PayCalc = () => {
   const [results, setResults] = useState([]);
   // This useEffect is used to get the results from session storage on page load
   useEffect(() => {
-    console.log('hit 1');
     const session = sessionStorage.getItem('results');
     if (session) {
       setResults(JSON.parse(session));
@@ -45,6 +44,7 @@ export const PayCalc = () => {
   // This function is used to handle the form submission, calculate the pay, and add the result to the results state
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!jobTitle || !payAmount || payAmount.length < 2 || !selectedPayPeriod || !hoursPerWeek) return;
     const result = {
       jobTitle,
       hoursPerWeek,

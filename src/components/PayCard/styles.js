@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledCard = styled.section`
+export const StyledCard = styled.article`
   position: relative;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 5px;
