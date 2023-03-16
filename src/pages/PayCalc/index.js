@@ -13,6 +13,7 @@ import { CardContainer, FormContainer } from './style';
 
 // HELPERS
 import { calculatePay } from './helpers/calculatePay';
+import { validateForm } from './helpers/validateForm';
 
 export const PayCalc = () => {
   // This is the array of options for the pay period select
@@ -24,10 +25,13 @@ export const PayCalc = () => {
   ];
 
   // State for the form is set up here
-  const [jobTitle, setJobTitle] = useState('');
-  const [payAmount, setPayAmount] = useState('');
-  const [selectedPayPeriod, setSelectedPayPeriod] = useState('yearly');
-  const [hoursPerWeek, setHoursPerWeek] = useState('');
+  const [formData, setFormData] = useState({
+    jobTitle: '',
+    payAmount: '',
+    selectedPayPeriod: 'yearly',
+    hoursPerWeek: '',
+  });
+  // Error state for the form
   const [error, setError] = useState({
     eJobTitle: '',
     ePayAmount: '',
@@ -35,43 +39,24 @@ export const PayCalc = () => {
   });
 
   // Session Storage of the results is set up here
-  const [results, setResults] = useState([]);
-  // This useEffect is used to get the results from session storage on page load
-  useEffect(() => {
+  const [results, setResults] = useState(() => {
     const session = sessionStorage.getItem('results');
-    if (session) {
-      setResults(JSON.parse(session));
-    } else {
-      setResults([]);
-    }
-  }, []);
-
-  // This function is used to validate the form
-  const validateForm = () => {
-    const errors = {
-      eJobTitle: !jobTitle.trim() ? 'Please enter a job title' : '',
-      ePayAmount: !payAmount || payAmount.length < 2 ? 'Please enter a valid amount' : '',
-      eHoursPerWeek: !hoursPerWeek ? 'Please enter hours worked per week' : '',
-    };
-
-    setError(errors);
-    return !Object.values(errors).some((error) => error);
-  };
+    return session ? JSON.parse(session) : [];
+  });
 
   // This function is used to handle the form submission, calculate the pay, and add the result to the results state
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!validateForm()) {
+    // Validates form data and shows inline errors if incorrect
+    if (!validateForm(formData, setError)) {
       return;
     }
     const result = {
-      jobTitle,
-      hoursPerWeek,
-      selectedPayPeriod,
-      payAmount,
-      ...calculatePay(payAmount, selectedPayPeriod, hoursPerWeek),
+      ...formData,
+      ...calculatePay(formData.payAmount, formData.selectedPayPeriod, formData.hoursPerWeek),
     };
-    setResults([...results, result]);
+    // Adds the result to the results state and session storage
+    setResults((prevResults) => [...prevResults, result]);
     sessionStorage.setItem('results', JSON.stringify([...results, result]));
   };
 
@@ -89,15 +74,9 @@ export const PayCalc = () => {
       <FormContainer>
         <PayCalcForm
           handleSubmit={handleSubmit}
-          jobTitle={jobTitle}
-          setJobTitle={setJobTitle}
-          payAmount={payAmount}
-          setPayAmount={setPayAmount}
+          formData={formData}
+          setFormData={setFormData}
           payPeriods={payPeriods}
-          selectedPayPeriod={selectedPayPeriod}
-          setSelectedPayPeriod={setSelectedPayPeriod}
-          hoursPerWeek={hoursPerWeek}
-          setHoursPerWeek={setHoursPerWeek}
           error={error}
         />
         <Text>

@@ -12,15 +12,9 @@ import { toTitleCase } from '../helpers/toTitleCase';
 // This component handles the form for the Pay Calculator page
 export const PayCalcForm = ({
   handleSubmit,
-  jobTitle,
-  setJobTitle,
-  payAmount,
-  setPayAmount,
   payPeriods,
-  selectedPayPeriod,
-  setSelectedPayPeriod,
-  hoursPerWeek,
-  setHoursPerWeek,
+  formData,
+  setFormData,
   error
 }) => {
   return (
@@ -29,8 +23,8 @@ export const PayCalcForm = ({
         type="text"
         label="Job Title"
         placeholder="Enter a job title"
-        value={jobTitle}
-        onChange={(e) => setJobTitle(toTitleCase(e.target.value))}
+        value={formData.jobTitle}
+        onChange={(e) => setFormData({ ...formData, jobTitle: toTitleCase(e.target.value) })}
         error={error.eJobTitle}
       />
       <FormInput
@@ -38,15 +32,15 @@ export const PayCalcForm = ({
         label="Pay Amount"
         placeholder="£3200.00"
         maxLength="10"
-        value={payAmount}
-        onChange={(e) => setPayAmount(parseCurrency(e.target.value))}
+        value={formData.payAmount}
+        onChange={(e) => setFormData({ ...formData, payAmount: parseCurrency(e.target.value) })}
         error={error.ePayAmount}
       />
       <FormSelect
         label="Pay Period"
         options={payPeriods}
-        selectedOption={selectedPayPeriod}
-        handleOptionChange={(e) => setSelectedPayPeriod(e.target.value)}
+        selectedOption={formData.selectedPayPeriod}
+        handleOptionChange={(e) => setFormData({ ...formData, selectedPayPeriod: e.target.value })}
         required
       />
       <FormInput
@@ -55,8 +49,8 @@ export const PayCalcForm = ({
         placeholder="35"
         min="0"
         max="168"
-        value={hoursPerWeek}
-        onChange={(e) => setHoursPerWeek(parseHoursPerWeek(e.target.value))}
+        value={formData.hoursPerWeek}
+        onChange={(e) => setFormData({ ...formData, hoursPerWeek: parseHoursPerWeek(e.target.value) })}
         error={error.eHoursPerWeek}
       />
       <FormButton />
