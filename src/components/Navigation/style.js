@@ -30,13 +30,16 @@ export const NavContent = styled.nav`
   }
 `;
 
-export const NavTitle = styled.h2`
-  ${({ theme }) => theme.fonts.title};
-  color: ${({ theme }) => theme.colors.textWhite};
-  flex-grow: 1;
+export const NavLogo = styled.img`
+  height: 40px;
+  @media (max-width: 626px) {
+    display: none;
+  }
+`;
 
-  /* hide the title when the screen is 777 or smaller */
-  @media (max-width: 777px) {
+export const NavSpacer = styled.div`
+  flex-grow: 1;
+  @media (max-width: 626px) {
     display: none;
   }
 `;

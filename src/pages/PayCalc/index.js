@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 // COMPONENTS
 import { PageBody } from '../../components/Layout/PageBody';
@@ -66,6 +66,8 @@ export const PayCalc = () => {
     setResults(newResults);
     sessionStorage.setItem('results', JSON.stringify(newResults));
   };
+
+  console.log("hit");
 
   return (
     <PageBody>
