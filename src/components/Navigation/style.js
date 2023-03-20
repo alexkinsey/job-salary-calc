@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 import { Link } from 'react-router-dom';
 
-export const NavBarBackground = styled.header`
+export const NavBarBackground = styled.nav`
+  position: fixed;
+  z-index: 100;
   display: flex;
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.secondary};
@@ -10,9 +12,13 @@ export const NavBarBackground = styled.header`
   padding: 0 20px;
   min-width: ${({ theme }) => theme.sizes.xs};
   width: 100%;
+
+  @media (max-width: 626px) {
+    height: 100px;
+  }
 `;
 
-export const NavContent = styled.nav`
+export const NavContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,12 +34,17 @@ export const NavContent = styled.nav`
   @media (min-width: ${({ theme }) => theme.sizes.lg}) {
     padding: 0 20px;
   }
+  @media (max-width: 626px) {
+    flex-direction: column;
+    gap: 0;
+    margin: 0.5rem;
+  }
 `;
 
 export const NavLogo = styled.img`
   height: 40px;
   @media (max-width: 626px) {
-    display: none;
+    /* display: none; */
   }
 `;
 
@@ -41,6 +52,16 @@ export const NavSpacer = styled.div`
   flex-grow: 1;
   @media (max-width: 626px) {
     display: none;
+  }
+`;
+
+export const NavLinkContainer = styled.div`
+  display: flex;
+  gap: 2em;
+  @media (max-width: 626px) {
+    justify-content: space-between;
+    width: 100%;
+    gap: 0;
   }
 `;
 

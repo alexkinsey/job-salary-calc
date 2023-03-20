@@ -25,6 +25,14 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.background};
   }
 
+  /* push main content below fixed nav bar */
+  main {
+    padding-top: 60px !important;
+    @media (max-width: 626px) {
+      padding-top: 100px !important;
+    }
+  }
+
   /* remove default margin and padding from text */
   h1, h2, h3, h4, h5, h6, p, ul, figure, blockquote, dl, dd {
     padding: 0;
@@ -48,7 +56,7 @@ export const GlobalStyles = createGlobalStyle`
     outline: none;
   }
 
-  /* remove ios styling of selects and manual add arrow back in */
+  /* remove ios styling of selects and manually add arrow back in */
   select {
     -webkit-appearance: none;
     -moz-appearance: none;
