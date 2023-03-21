@@ -7,18 +7,19 @@ export const NavBarBackground = styled.nav`
   z-index: 100;
   display: flex;
   justify-content: center;
+
   background-color: ${({ theme }) => theme.colors.secondary};
-  height: 60px;
+
+  height: ${({ isOpen }) => (isOpen ? '100px' : '60px')};
+  width: 100%;
   padding: 0 20px;
   min-width: ${({ theme }) => theme.sizes.xs};
-  width: 100%;
 
-  @media (max-width: 626px) {
-    height: 100px;
-  }
+  transition: height 0.5s ease-in-out;
 `;
 
 export const NavContent = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,17 +35,15 @@ export const NavContent = styled.div`
   @media (min-width: ${({ theme }) => theme.sizes.lg}) {
     padding: 0 20px;
   }
-  @media (max-width: 626px) {
-    flex-direction: column;
-    gap: 0;
-    margin: 0.5rem;
-  }
 `;
 
 export const NavLogo = styled.img`
   height: 40px;
   @media (max-width: 626px) {
-    /* display: none; */
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    z-index: 1001;
   }
 `;
 
@@ -58,10 +57,18 @@ export const NavSpacer = styled.div`
 export const NavLinkContainer = styled.div`
   display: flex;
   gap: 2em;
+  /* the container should be 50% of the expanded area with the links in the centre */
   @media (max-width: 626px) {
+    height: 50%;
+    width: 350px;
+    position: absolute;
+    bottom: 0;
+    align-items: center;
     justify-content: space-between;
-    width: 100%;
     gap: 0;
+    /* fade contents in and out */
+    opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
+    transition: all 0.3s ease-in-out;
   }
 `;
 
@@ -69,6 +76,7 @@ export const NavLinkContainer = styled.div`
 export const NavLink = styled(Link)`
   ${({ theme }) => theme.fonts.normal};
   color: ${({ theme }) => theme.colors.textWhite};
+  cursor: pointer;
 
   :hover {
     color: ${({ theme }) => theme.colors.textWhite};

@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     font-family: ${({ theme }) =>
       theme.fonts
-        .sanSerif}, sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        .sanSerif}, sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue';
     font-size: 14px;
     color: ${({ theme }) => theme.colors.textBlack};
     background-color: ${({ theme }) => theme.colors.background};
@@ -28,9 +28,6 @@ export const GlobalStyles = createGlobalStyle`
   /* push main content below fixed nav bar */
   main {
     padding-top: 60px !important;
-    @media (max-width: 626px) {
-      padding-top: 100px !important;
-    }
   }
 
   /* remove default margin and padding from text */
