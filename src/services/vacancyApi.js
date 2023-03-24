@@ -30,7 +30,6 @@ export const fetchVacancyBySearch = async (keyword) => {
 
 export const fetchDescriptionByTitle = async (JobTitle) => {
   const formattedJobTitle = JobTitle.replace(/ /g, '%20');
-  console.log('API', formattedJobTitle);
   const response = await fetch(`http://api.lmiforall.org.uk/api/v1/soc/search?q=${formattedJobTitle}`, {
     method: 'GET',
     // mode: 'no-cors'

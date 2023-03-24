@@ -5,13 +5,13 @@ import { NavBarBackground, NavContent, NavLogo, NavLinkContainer, NavLink, NavSp
 import { Burger } from './Burger';
 
 export const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   // close the burger menu on resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 626) {
-        setIsOpen(false);
+        setOpen(false);
       }
     };
     handleResize(); // call handleResize on mount
@@ -21,22 +21,22 @@ export const NavBar = () => {
   }, []);
 
   return (
-    <NavBarBackground isOpen={isOpen}>
-      <NavContent onMouseLeave={() => setIsOpen(false)}>
+    <NavBarBackground open={open}>
+      <NavContent onMouseLeave={() => setOpen(false)}>
         <NavLogo src={logo} alt="logo" />
         <NavSpacer />
-        <NavLinkContainer isOpen={isOpen}>
-          <NavLink to="/" isOpen={isOpen} onClick={() => setIsOpen(false)}>
+        <NavLinkContainer open={open}>
+          <NavLink to="/" open={open} onClick={() => setOpen(false)}>
             Home
           </NavLink>
-          <NavLink to="/pay-calc" isOpen={isOpen} onClick={() => setIsOpen(false)}>
+          <NavLink to="/pay-calc" open={open} onClick={() => setOpen(false)}>
             Pay Calculator
           </NavLink>
-          <NavLink to="/vacancy-search" isOpen={isOpen} onClick={() => setIsOpen(false)}>
+          <NavLink to="/vacancy-search" open={open} onClick={() => setOpen(false)}>
             Vacancy Search
           </NavLink>
         </NavLinkContainer>
-        <Burger isOpen={isOpen} setIsOpen={setIsOpen} />
+        <Burger open={open} setOpen={setOpen} />
       </NavContent>
     </NavBarBackground>
   );

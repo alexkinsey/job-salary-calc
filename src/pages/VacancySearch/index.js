@@ -20,6 +20,7 @@ export const VacancySearch = () => {
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
 
+  // fetch the 10 most recent vacancies
   useEffect(() => {
     async function fetchData() {
       try {
@@ -35,6 +36,7 @@ export const VacancySearch = () => {
     fetchData();
   }, []);
 
+  // handle search input and fetch vacancies
   const handleSearch = (e) => {
     e.preventDefault();
     async function fetchData() {
@@ -44,7 +46,7 @@ export const VacancySearch = () => {
         if (data.length === 0) {
           setFoundVacancies([{ title: 'No vacancies found' }]);
         } else {
-          setFoundVacancies(data.slice(0, 10));
+          setFoundVacancies(data);
         }
         setIsLoading(false);
       } catch (err) {
@@ -64,8 +66,10 @@ export const VacancySearch = () => {
     <PageBody>
       <Title>Vacancy Search</Title>
       <Text>
-        Search for a vacancy by title, company, location or keyword. You can also search for a specific job type.
+        Search for a role by typing a keyword in the search bar below. You can also click on the vacancy title to learn
+        more about the job.
       </Text>
+      <Text>Press the coloured X to show the 10 most recent roles.</Text>
       <SearchBar onSubmit={handleSearch}>
         <Input
           type="text"
@@ -85,6 +89,7 @@ export const VacancySearch = () => {
         ((!vacancies && error) || (!foundVacancies && error)) && <Text>{error}</Text>
       )}
 
+      {/* show 10 most recent vacancies if retrieved from API */}
       {!isLoading && foundVacancies.length === 0 && vacancies && (
         <>
           <Text>The 10 most recent vacancies:</Text>
@@ -94,10 +99,11 @@ export const VacancySearch = () => {
         </>
       )}
 
+      {/* show vacancies found by search term if retrieved from API */}
       {!isLoading && foundVacancies.length > 0 && (
         <>
           <Text>
-            The 10 most recent vacancies found for "<strong>{searchTerm}</strong>":
+            {foundVacancies.length} vacancies found for "<strong>{searchTerm}</strong>":
           </Text>
           {foundVacancies.map((vacancy) => (
             <VacancyCard key={vacancy?.id || 1} vacancy={vacancy} />

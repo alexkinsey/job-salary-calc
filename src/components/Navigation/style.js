@@ -12,12 +12,12 @@ export const NavBarBackground = styled.nav`
 
   background-color: ${({ theme }) => theme.colors.secondary};
 
-  height: ${({ isOpen }) => (isOpen ? '120px' : '60px')};
+  height: ${({ open }) => (open ? '120px' : '60px')};
   width: 100%;
   padding: 0 20px;
   min-width: ${({ theme }) => theme.sizes.xs};
 
-  box-shadow: ${({ isOpen }) => (isOpen ? '0 5px 25px 15px rgba(0, 15, 33, 0.5)' : 'none')};
+  box-shadow: ${({ open }) => (open ? '0 5px 25px 15px rgba(0, 15, 33, 0.5)' : 'none')};
 
   transition: all 0.5s ease-in-out;
 `;
@@ -72,7 +72,7 @@ export const NavLinkContainer = styled.div`
     justify-content: space-around;
     gap: 0px;
     /* fade contents in and out */
-    opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
+    opacity: ${({ open }) => (open ? 1 : 0)};
     transition: all 0.3s ease-in-out;
 
     :first-child {
@@ -88,7 +88,7 @@ export const NavLink = styled(Link)`
   cursor: pointer;
   /* on mobile disable links when burger menu closed */
   @media (max-width: ${smallNavBreakpoint}) {
-    pointer-events: ${({ isOpen }) => (isOpen ? 'auto' : 'none')};
+    pointer-events: ${({ open }) => (open ? 'auto' : 'none')};
   }
 
   :hover {

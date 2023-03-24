@@ -13,4 +13,8 @@ export const Input = styled.input`
   border-radius: 5px;
   margin: 0.5rem 0;
   width: 100%;
+
+  &:focus {
+    border: 1px solid ${({ theme }) => theme.colors.primary};
+  }
 `;

@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 
+// STYLES
 import { DeleteButton, StyledCard } from './styles';
-
 import { IoCloseCircleOutline, IoCloseCircleSharp } from 'react-icons/io5';
 
+// COMPONENTS
 import { Text } from '../../../components/Text/Text';
 import { Subheading } from '../../../components/Text/Subheading';
 

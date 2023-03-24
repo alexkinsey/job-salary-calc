@@ -14,4 +14,8 @@ export const Select = styled.select`
   margin: 0.5rem 0;
   padding: 0.5rem;
   width: 100%;
+
+  &:focus {
+    border: 1px solid ${({ theme }) => theme.colors.primary};
+  }
 `;

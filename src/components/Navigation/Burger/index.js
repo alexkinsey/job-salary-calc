@@ -28,21 +28,21 @@ const StyledBurger = styled.div`
     transition: all 0.3s linear;
 
     &:nth-child(1) {
-      transform: ${({ isOpen }) => (isOpen ? 'rotate(45deg)' : 'rotate(0)')};
+      transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};
     }
     &:nth-child(2) {
-      transform: ${({ isOpen }) => (isOpen ? 'translateY(-1rem) rotate(45deg)' : 'translateY(0%) rotate(0)')};
-      opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
+      transform: ${({ open }) => (open ? 'translateY(-1rem) rotate(45deg)' : 'translateY(0%) rotate(0)')};
+      opacity: ${({ open }) => (open ? 0 : 1)};
     }
     &:nth-child(3) {
-      transform: ${({ isOpen }) => (isOpen ? 'rotate(-45deg)' : 'rotate(0)')};
+      transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
     }
   }
 `;
 
-export const Burger = ({ isOpen, setIsOpen }) => {
+export const Burger = ({ open, setOpen }) => {
   return (
-    <StyledBurger isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
+    <StyledBurger open={open} onClick={() => setOpen(!open)}>
       <div />
       <div />
       <div />
