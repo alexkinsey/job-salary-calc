@@ -26,13 +26,13 @@ export const NavBar = () => {
         <NavLogo src={logo} alt="logo" />
         <NavSpacer />
         <NavLinkContainer isOpen={isOpen}>
-          <NavLink to="/" onClick={() => setIsOpen(false)}>
+          <NavLink to="/" isOpen={isOpen} onClick={() => setIsOpen(false)}>
             Home
           </NavLink>
-          <NavLink to="/pay-calc" onClick={() => setIsOpen(false)}>
+          <NavLink to="/pay-calc" isOpen={isOpen} onClick={() => setIsOpen(false)}>
             Pay Calculator
           </NavLink>
-          <NavLink to="/vacancy-search" onClick={() => setIsOpen(false)}>
+          <NavLink to="/vacancy-search" isOpen={isOpen} onClick={() => setIsOpen(false)}>
             Vacancy Search
           </NavLink>
         </NavLinkContainer>

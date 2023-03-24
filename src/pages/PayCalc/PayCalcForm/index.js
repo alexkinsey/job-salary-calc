@@ -1,6 +1,6 @@
 // COMPONENTS
 import { Form } from '../../../components/Form';
-import { FormButton } from '../../../components/Form/FormButton';
+import { Button } from '../../../components/Button';
 import { FormInput } from '../../../components/Form/FormInput';
 import { FormSelect } from '../../../components/Form/FormSelect';
 
@@ -53,7 +53,7 @@ export const PayCalcForm = ({
         onChange={(e) => setFormData({ ...formData, hoursPerWeek: parseHoursPerWeek(e.target.value) })}
         error={error.eHoursPerWeek}
       />
-      <FormButton />
+      <Button>Calculate</Button>
     </Form>
   );
 };

@@ -21,7 +21,7 @@ const StyledBurger = styled.div`
   /* create shape of burger icon and animate */
   div {
     width: 2rem;
-    height: 0.25rem;
+    height: 0.15rem;
     background: white;
     border-radius: 10px;
     transform-origin: 1px;

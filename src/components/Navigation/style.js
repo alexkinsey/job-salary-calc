@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import { Link } from 'react-router-dom';
 
+const smallNavBreakpoint = '626px';
+
 export const NavBarBackground = styled.nav`
   position: fixed;
   z-index: 100;
@@ -10,12 +12,14 @@ export const NavBarBackground = styled.nav`
 
   background-color: ${({ theme }) => theme.colors.secondary};
 
-  height: ${({ isOpen }) => (isOpen ? '100px' : '60px')};
+  height: ${({ isOpen }) => (isOpen ? '120px' : '60px')};
   width: 100%;
   padding: 0 20px;
   min-width: ${({ theme }) => theme.sizes.xs};
 
-  transition: height 0.5s ease-in-out;
+  box-shadow: ${({ isOpen }) => (isOpen ? '0 5px 25px 15px rgba(0, 15, 33, 0.5)' : 'none')};
+
+  transition: all 0.5s ease-in-out;
 `;
 
 export const NavContent = styled.div`
@@ -39,7 +43,7 @@ export const NavContent = styled.div`
 
 export const NavLogo = styled.img`
   height: 40px;
-  @media (max-width: 626px) {
+  @media (max-width: ${smallNavBreakpoint}) {
     position: fixed;
     top: 10px;
     left: 20px;
@@ -49,7 +53,7 @@ export const NavLogo = styled.img`
 
 export const NavSpacer = styled.div`
   flex-grow: 1;
-  @media (max-width: 626px) {
+  @media (max-width: ${smallNavBreakpoint}) {
     display: none;
   }
 `;
@@ -58,17 +62,22 @@ export const NavLinkContainer = styled.div`
   display: flex;
   gap: 2em;
   /* the container should be 50% of the expanded area with the links in the centre */
-  @media (max-width: 626px) {
-    height: 50%;
-    width: 350px;
+  @media (max-width: ${smallNavBreakpoint}) {
     position: absolute;
     bottom: 0;
+    height: 50%;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     align-items: center;
-    justify-content: space-between;
-    gap: 0;
+    justify-content: space-around;
+    gap: 0px;
     /* fade contents in and out */
     opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
     transition: all 0.3s ease-in-out;
+
+    :first-child {
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+    }
   }
 `;
 
@@ -77,6 +86,10 @@ export const NavLink = styled(Link)`
   ${({ theme }) => theme.fonts.normal};
   color: ${({ theme }) => theme.colors.textWhite};
   cursor: pointer;
+  /* on mobile disable links when burger menu closed */
+  @media (max-width: ${smallNavBreakpoint}) {
+    pointer-events: ${({ isOpen }) => (isOpen ? 'auto' : 'none')};
+  }
 
   :hover {
     color: ${({ theme }) => theme.colors.textWhite};
