@@ -6,7 +6,7 @@ import { Heading } from '../../components/Text/Heading';
 import { Text } from '../../components/Text/Text';
 import { Title } from '../../components/Text/Title';
 import { PayCalcForm } from './PayCalcForm';
-import { Card } from '../../components/PayCard';
+import { Card } from './PayCard';
 
 // STYLES
 import { CardContainer, FormContainer } from './style';
