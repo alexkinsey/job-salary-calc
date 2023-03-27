@@ -69,7 +69,7 @@ export const VacancySearch = () => {
         Search for a role by typing a keyword in the search bar below. You can also click on the vacancy title to learn
         more about the job.
       </Text>
-      <Text>Press the coloured X to show the 10 most recent roles.</Text>
+      {foundVacancies.length > 0 && <Text>Press the coloured X to show the 10 most recent roles.</Text>}
       <SearchBar onSubmit={handleSearch}>
         <Input
           type="text"
@@ -78,9 +78,12 @@ export const VacancySearch = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <Button type="submit">Search</Button>
-        <ClearButton secondary type="button" onClick={handleClear}>
-          <IoClose size={28} />
-        </ClearButton>
+        {/* show the clear button if there is text in the search bar  */}
+        {searchTerm && (
+          <ClearButton secondary type="button" onClick={handleClear}>
+            <IoClose size={28} />
+          </ClearButton>
+        )}
       </SearchBar>
 
       {isLoading ? (

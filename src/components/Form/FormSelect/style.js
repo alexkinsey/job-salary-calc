@@ -12,7 +12,7 @@ export const Select = styled.select`
   border: 1px solid ${({ theme }) => theme.colors.grey};
   border-radius: 5px;
   margin: 0.5rem 0;
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
   width: 100%;
 
   &:focus {

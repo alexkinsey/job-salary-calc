@@ -7,7 +7,7 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   display: block;
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
   border: 1px solid ${({ theme }) => theme.colors.grey};
   color: ${({ theme }) => theme.colors.textBlack};
   border-radius: 5px;

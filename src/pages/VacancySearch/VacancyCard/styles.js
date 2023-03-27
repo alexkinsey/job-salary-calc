@@ -8,13 +8,13 @@ export const StyledCard = styled.article`
   margin: 1rem 0;
 
   height: max-content;
-  transition: border 0.2s ease-in-out;
+  transition: all 0.5s ease-in-out;
 
   /* show border on selected cards */
-  border: ${({ theme, selected }) => (selected ? `1px solid ${theme.colors.primary}` : 'auto')};
+  outline: ${({ theme, selected }) => (selected ? `1px solid ${theme.colors.primary}` : 'none')};
 
   :hover {
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
-    border: 1px solid ${({ theme }) => theme.colors.primary};
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    outline: 2px solid ${({ theme }) => theme.colors.primary};
   }
 `;

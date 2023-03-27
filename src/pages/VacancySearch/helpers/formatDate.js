@@ -8,8 +8,7 @@ export const formatDate = (dateStr) => {
     hour: 'numeric',
     minute: 'numeric',
     hour12: true,
-    // timeZoneName: 'short',
   };
   const date = new Date(dateStr);
-  return date.toLocaleDateString('en-US', options);
+  return date.toLocaleDateString('en-GB', options);
 };
