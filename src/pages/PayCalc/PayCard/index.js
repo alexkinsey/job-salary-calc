@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { motion } from 'framer-motion';
 
 // STYLES
 import { DeleteButton, StyledCard } from './styles';
@@ -23,10 +22,10 @@ export const Card = ({
 }) => {
   return (
     <StyledCard
-      // initial={{ opacity: 0 }}
-      // animate={{ opacity: 1 }}
-      // exit={{ opacity: 0 }}
-      // transition={{ duration: 0.6, ease: 'easeInOut' }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6, ease: 'easeInOut' }}
     >
       <Subheading>{jobTitle}</Subheading>
       <Text>
