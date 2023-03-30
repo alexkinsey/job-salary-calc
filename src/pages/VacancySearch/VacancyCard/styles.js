@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 
-export const StyledCard = styled(motion.article)`
+export const StyledCard = styled.article`
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 5px;
   box-shadow: ${({ theme }) => theme.shadows.small};

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // COMPONENTS
@@ -25,8 +25,9 @@ export const VacancyCard = ({ vacancy }) => {
   // fetch the description of the vacancy title
   const handleCardClick = () => {
     setSelected(!selected);
-    if (!selected) {
-      setDescription(null);
+    // if the description is already fetched, don't fetch again
+    if (description) {
+      return;
     }
     async function fetchData() {
       try {
@@ -43,11 +44,11 @@ export const VacancyCard = ({ vacancy }) => {
   return (
     <StyledCard onClick={handleCardClick} selected={selected}>
       <motion.div
+        // this wrapper allows the card to animate a fade in
         className="card-animation-wrapper"
-        // this wrapper allows the card to animate the height, an initial height is required
-        initial={{ height: '4.5rem', opacity: 0 }}
-        animate={{ height: selected ? 'auto' : '4.5rem', opacity: 1 }}
-        exit={{ height: 'auto', opacity: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
         <Subheading>{vacancy.title}</Subheading>
@@ -56,6 +57,7 @@ export const VacancyCard = ({ vacancy }) => {
           {selected && (
             <motion.section
               // this wrapper allows the card content to animate the opacity
+              className="card-content-animation-wrapper"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
