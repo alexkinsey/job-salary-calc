@@ -5,11 +5,11 @@ import { css } from 'styled-components';
 // The theme is then used in the styled components to set the styles for the app
 export const theme = {
   colors: {
-    primary: '#f85000',
-    primaryHover: '#d92600',
-    secondary: '#20496b',
-    background: '#f9faf7',
-    textBlack: '#2e3742',
+    primary: '#eb2b38',
+    primaryHover: '#d31b1f',
+    secondary: '#076798',
+    background: '#feffff',
+    textBlack: '#023350',
     textGrey: '#5b6876',
     textWhite: '#f9f9f9',
     white: '#ffffff',
@@ -49,6 +49,10 @@ export const theme = {
       font-weight: 400;
       text-transform: uppercase;
     `,
+  },
+  shadows: {
+    small: '0 1px 3px 1px rgba(50, 50, 90, 0.15), 0 3px 3px 0 rgba(0, 0, 0, 0.06)',
+    smallHover: '0px 13px 27px -5px rgba(50, 50, 90, 0.25), 0px 8px 16px -8px rgba(0, 0, 0, 0.3);',
   },
   sizes: {
     xs: '375px', // for small screen mobile

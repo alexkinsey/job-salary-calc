@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 // COMPONENTS
-import { PageBody } from '../../components/Layout/PageBody';
+import { PageBody } from '../../common/styles/PageBody';
 import { Heading } from '../../components/Text/Heading';
 import { Text } from '../../components/Text/Text';
 import { Title } from '../../components/Text/Title';

@@ -7,8 +7,8 @@ import { PayCalc } from './pages/PayCalc';
 import { VacancySearch } from './pages/VacancySearch';
 
 // STYLES
-import { GlobalStyles } from './styles/GlobalStyles';
-import { theme } from './styles/Theme';
+import { GlobalStyles } from './common/styles/GlobalStyles';
+import { theme } from './common/styles/Theme';
 
 // COMPONENTS
 import { NavBar } from './components/Navigation';

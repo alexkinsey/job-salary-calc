@@ -3,7 +3,7 @@ export function calculatePay(payAmount, payPeriod, hoursPerWeek) {
   let hourlyRate, weeklyRate, monthlyRate, yearlyRate;
 
   // Sanitize the payAmount input
-  payAmount = parseFloat(payAmount.replace(/\D/g, ''));
+  payAmount = parseFloat(payAmount.replace(/\s*£/g, ''));
 
   if (payPeriod === 'hourly') {
     hourlyRate = payAmount;

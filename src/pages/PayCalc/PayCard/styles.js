@@ -4,7 +4,7 @@ export const StyledCard = styled.article`
   position: relative;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 5px;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: ${({ theme }) => theme.shadows.small};
   padding: 1rem;
   margin: 0.75rem 0;
   width: 49%;

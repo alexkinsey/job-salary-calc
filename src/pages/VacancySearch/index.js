@@ -3,7 +3,7 @@ import { IoClose } from 'react-icons/io5';
 
 // COMPONENTS
 import { ClearButton, SearchBar } from './style';
-import { PageBody } from '../../components/Layout/PageBody';
+import { PageBody } from '../../common/styles/PageBody';
 import { Text } from '../../components/Text/Text';
 import { Title } from '../../components/Text/Title';
 import { VacancyCard } from './VacancyCard';

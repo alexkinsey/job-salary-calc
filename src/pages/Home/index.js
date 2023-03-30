@@ -5,7 +5,7 @@ import { BannerContainer, BannerImage, Section } from './style';
 import bannerImage from '../../assets/images/banner.jpg';
 
 // COMPONENTS
-import { PageBody } from '../../components/Layout/PageBody';
+import { PageBody } from '../../common/styles/PageBody';
 import { Title } from '../../components/Text/Title';
 import { Heading } from '../../components/Text/Heading';
 import { Text } from '../../components/Text/Text';
