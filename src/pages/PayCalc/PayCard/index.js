@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
 // STYLES
 import { DeleteButton, StyledCard } from './styles';
@@ -21,7 +22,12 @@ export const Card = ({
   handleDelete,
 }) => {
   return (
-    <StyledCard>
+    <StyledCard
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: 1 }}
+      // exit={{ opacity: 0 }}
+      // transition={{ duration: 0.6, ease: 'easeInOut' }}
+    >
       <Subheading>{jobTitle}</Subheading>
       <Text>
         Working <b>{hoursPerWeek}</b> hours a week for <b>{payAmount}</b> per <b>{selectedPayPeriod.slice(0, -2)}</b>{' '}

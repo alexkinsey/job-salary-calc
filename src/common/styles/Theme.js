@@ -6,7 +6,7 @@ import { css } from 'styled-components';
 export const theme = {
   colors: {
     primary: '#eb2b38',
-    primaryHover: '#d31b1f',
+    primaryHover: '#d40014',
     secondary: '#076798',
     background: '#feffff',
     textBlack: '#023350',
@@ -51,8 +51,8 @@ export const theme = {
     `,
   },
   shadows: {
-    small: '0 1px 3px 1px rgba(50, 50, 90, 0.15), 0 3px 3px 0 rgba(0, 0, 0, 0.06)',
-    smallHover: '0px 13px 27px -5px rgba(50, 50, 90, 0.25), 0px 8px 16px -8px rgba(0, 0, 0, 0.3);',
+    small: '0 1px 3px 1px rgba(50, 50, 90, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.06)',
+    smallHover: '0px 13px 27px -5px rgba(50, 50, 90, 0.25), 0px 5px 16px -8px rgba(0, 0, 0, 0.3);',
   },
   sizes: {
     xs: '375px', // for small screen mobile

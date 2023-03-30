@@ -67,8 +67,6 @@ export const PayCalc = () => {
     sessionStorage.setItem('results', JSON.stringify(newResults));
   };
 
-  console.log("hit");
-
   return (
     <PageBody>
       <Title>Pay Calculator</Title>
