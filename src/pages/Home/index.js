@@ -15,7 +15,7 @@ export const Home = () => {
   return (
     <PageBody>
       <BannerContainer>
-        <BannerImage src={bannerImage} />
+        <BannerImage src={bannerImage} alt="Image of woman working on laptop"/>
         <Title>Calculate your pay or find a new job</Title>
       </BannerContainer>
       <Section>
@@ -24,6 +24,8 @@ export const Home = () => {
           open positions and calculate your pay. With our intuitive and user-friendly interface, you can find the
           information you need in just a few clicks.
         </Text>
+      </Section>
+      <Section>
         <Heading showUnderline>Pay Calculator</Heading>
         <Text>
           Use our pay calculator to get a breakdown of your hourly, weekly, monthly, and annual pay. It's a great tool

@@ -6,8 +6,8 @@ import { css } from 'styled-components';
 export const theme = {
   colors: {
     primary: '#eb2b38',
-    primaryHover: '#d40014',
-    secondary: '#076798',
+    primaryHover: '#bf0212',
+    secondary: '#3b4751',
     background: '#feffff',
     textBlack: '#023350',
     textGrey: '#5b6876',

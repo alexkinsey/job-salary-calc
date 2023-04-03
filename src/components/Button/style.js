@@ -5,7 +5,7 @@ export const StyledButton = styled.button`
   color: ${({ theme }) => theme.colors.textWhite};
   /* border: ${({ theme }) => `2px solid ${theme.colors.primary}`}; */
   border-radius: 5px;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
   font-size: 1rem;
   transition: all 0.2s ease-in-out;
 

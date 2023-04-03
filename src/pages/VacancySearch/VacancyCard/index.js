@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // COMPONENTS
@@ -56,7 +56,7 @@ export const VacancyCard = ({ vacancy }) => {
         <AnimatePresence>
           {selected && (
             <motion.section
-              // this wrapper allows the card content to animate the opacity
+              // this wrapper allows the card content a fade in/out
               className="card-content-animation-wrapper"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -82,7 +82,7 @@ export const VacancyCard = ({ vacancy }) => {
                 </section>
               )}
               <Link isExternal location={vacancy.link}>
-                Learn more about the job
+                Learn more about this job
               </Link>
             </motion.section>
           )}
