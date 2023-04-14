@@ -8,16 +8,16 @@ import { LinkContainer, LinkText } from './style';
 
 // This components takes in a location which should be a URL and a boolean value for isExternal
 // If isExternal is true, an icon will display and the link will open in a new tab
-export const Link = ({ children, location, isExternal }) => {
+export const Link = ({ children, location, isExternal, ...props }) => {
   return (
     <>
       {isExternal ? (
-        <LinkContainer href={location} target="_blank" rel="noreferrer">
+        <LinkContainer href={location} target="_blank" rel="noreferrer" {...props}>
           <FiExternalLink style={{ fontSize: '18px' }} />
           <LinkText> {children}</LinkText>
         </LinkContainer>
       ) : (
-        <LinkContainer href={location}>
+        <LinkContainer href={location} {...props}>
           <LinkText>{children}</LinkText>
         </LinkContainer>
       )}

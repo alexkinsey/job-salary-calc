@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { StyledText } from '../../components/Text/Text/style';
 
-export const FormContainer = styled.section`
+export const FormContainer = styled.div`
   display: flex;
   gap: 30px;
 
@@ -16,7 +16,7 @@ export const FormContainer = styled.section`
   }
 `;
 
-export const CardContainer = styled.section`
+export const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

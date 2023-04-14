@@ -41,6 +41,7 @@ export const PayCalcForm = ({
         options={payPeriods}
         selectedOption={formData.selectedPayPeriod}
         handleOptionChange={(e) => setFormData({ ...formData, selectedPayPeriod: e.target.value })}
+        size={4}
         required
       />
       <FormInput
