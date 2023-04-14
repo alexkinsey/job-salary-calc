@@ -30,3 +30,28 @@ export const BannerImage = styled.img`
 export const Section = styled.section`
   margin: 0 0 2rem 0;
 `;
+
+export const HomeCard = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 2rem 0;
+  background-color: ${({ theme }) => theme.colors.white};
+  box-shadow: ${({ theme }) => theme.shadows.small};
+  border-radius: 1rem;
+  @media (max-width: ${({ theme }) => theme.sizes.lg}) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+`;
+
+export const HomeCardImage = styled.img`
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  /* border-radius: 1rem 0 0 1rem; */
+  border-radius: ${({ right }) => (right ? '0 1rem 1rem 0' : '1rem 0 0 1rem')};
+`;
+
+export const HomeCardContent = styled.div`
+  padding: 2rem;
+`;
