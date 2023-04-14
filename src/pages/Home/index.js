@@ -1,8 +1,9 @@
 // STYLES
-import { HomeCard, HomeCardImage, HomeCardContent } from './style';
+import { HomeCard, HomeCardImageContainer, HomeCardImage, HomeCardContent } from './style';
 
 // IMAGES
-import bannerImage from '../../assets/images/banner.jpg';
+import calculatingImage from '../../assets/images/calculating.jpeg';
+import moneyImage from '../../assets/images/money.jpeg';
 
 // COMPONENTS
 import { PageBody } from '../../common/styles/PageBody';
@@ -24,7 +25,9 @@ export const Home = () => {
         information you need in just a few clicks.
       </Text>
       <HomeCard>
-        <HomeCardImage src={bannerImage} />
+        <HomeCardImageContainer>
+          <HomeCardImage src={moneyImage} />
+        </HomeCardImageContainer>
         <HomeCardContent>
           <Heading showUnderline>Pay Calculator</Heading>
           <Text>
@@ -33,9 +36,7 @@ export const Home = () => {
             and the hours you work, for example, £2600 a month, at 35 hours a week, and the calculator will output the
             result.
           </Text>
-          <Link location={PAY_CALCULATOR_ROUTE}>
-            Take me to the calculator
-          </Link>
+          <Link location={PAY_CALCULATOR_ROUTE}>Take me to the calculator</Link>
           <Text>
             Please note, the calculator does not factor income tax. To find out more about income tax please visit
             GOV.UK for more information.
@@ -60,11 +61,11 @@ export const Home = () => {
             Finding the right job can be challenging, and that's why we're committed to making our vacancy search
             feature as user-friendly and efficient as possible.
           </Text>
-          <Link location={VACANCY_SEARCH_ROUTE}>
-            Take me to the vacancy search
-          </Link>
+          <Link location={VACANCY_SEARCH_ROUTE}>Take me to the vacancy search</Link>
         </HomeCardContent>
-        <HomeCardImage src={bannerImage} right/>
+        <HomeCardImageContainer right>
+          <HomeCardImage src={calculatingImage} />
+        </HomeCardImageContainer>
       </HomeCard>
     </PageBody>
   );
