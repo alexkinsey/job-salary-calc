@@ -46,7 +46,7 @@ export const VacancySearch = () => {
         if (data.length === 0) {
           setFoundVacancies([{ title: 'No vacancies found' }]);
         } else {
-          setFoundVacancies(data);
+          setFoundVacancies(data.slice(0, 10));
         }
         setIsLoading(false);
       } catch (err) {
@@ -106,7 +106,7 @@ export const VacancySearch = () => {
       {!isLoading && foundVacancies.length > 0 && (
         <>
           <Text>
-            {foundVacancies.length} vacancies found for "<strong>{searchTerm}</strong>":
+            Top {foundVacancies.length} vacancies found for "<strong>{searchTerm}</strong>":
           </Text>
           {foundVacancies.map((vacancy) => (
             <VacancyCard key={vacancy?.id || 1} vacancy={vacancy} />

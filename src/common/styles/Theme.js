@@ -8,7 +8,7 @@ export const theme = {
     primary: '#eb2b38',
     primaryHover: '#bf0212',
     secondary: '#3b4751',
-    background: '#feffff',
+    background: '#fdfafa',
     textBlack: '#023350',
     textGrey: '#5b6876',
     textWhite: '#f9f9f9',
@@ -55,11 +55,11 @@ export const theme = {
     smallHover: '0px 13px 27px -5px rgba(50, 50, 90, 0.25), 0px 5px 16px -8px rgba(0, 0, 0, 0.3);',
   },
   sizes: {
-    xs: '375px', // for small screen mobile
-    sm: '575px', // for mobile screen
-    ms: '768px', // for small tablets
-    ml: '900px', // for large tablets
-    lg: '1024px', // for laptops
-    xl: '1440px', // for desktop / monitors
+    xs: '375px', // small screen mobile
+    sm: '575px', // mobile screen
+    ms: '768px', // small tablets
+    ml: '900px', // large tablets
+    lg: '1024px', // laptops
+    xl: '1440px', // desktop / monitors
   },
 };

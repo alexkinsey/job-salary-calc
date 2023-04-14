@@ -15,16 +15,14 @@ export const Home = () => {
   return (
     <PageBody>
       <BannerContainer>
-        <BannerImage src={bannerImage} alt="Image of woman working on laptop"/>
+        <BannerImage src={bannerImage} alt="Image of woman working on laptop" />
         <Title>Calculate your pay or find a new job</Title>
       </BannerContainer>
-      <Section>
-        <Text>
-          Welcome to our job search and pay calculator application. This tool makes it simple and quick for you to find
-          open positions and calculate your pay. With our intuitive and user-friendly interface, you can find the
-          information you need in just a few clicks.
-        </Text>
-      </Section>
+      <Text>
+        Welcome to our job search and pay calculator application. This tool makes it simple and quick for you to find
+        open positions and calculate your pay. With our intuitive and user-friendly interface, you can find the
+        information you need in just a few clicks.
+      </Text>
       <Section>
         <Heading showUnderline>Pay Calculator</Heading>
         <Text>

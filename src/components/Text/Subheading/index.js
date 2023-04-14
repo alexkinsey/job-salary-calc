@@ -6,10 +6,10 @@ import { HR } from '../HR.style';
 // If showUnderline is true, an underline will display
 export const Subheading = ({ children, showUnderline }) => {
   return (
-    <StyledSubheading>
-      {children}
+    <>
+      <StyledSubheading>{children}</StyledSubheading>
       {showUnderline && <HR />}
-    </StyledSubheading>
+    </>
   );
 };
 
