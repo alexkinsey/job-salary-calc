@@ -12,8 +12,8 @@ import { Card } from './PayCard';
 import { CardContainer, FormContainer } from './style';
 
 // HELPERS
-import { calculatePay } from './helpers/calculatePay';
-import { validateForm } from './helpers/validateForm';
+import { calculatePay } from '../../utils/helpers/calculatePay';
+import { validateForm } from '../../utils/helpers/validateForm';
 
 export const PayCalc = () => {
   // This is the array of options for the pay period select

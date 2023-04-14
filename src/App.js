@@ -20,7 +20,6 @@ import { HOME_ROUTE, PAY_CALCULATOR_ROUTE, VACANCY_SEARCH_ROUTE } from './consta
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Router>
         <NavBar />
         <Routes>
           <Route path={HOME_ROUTE} element={<Home />} />
@@ -29,7 +28,6 @@ function App() {
           <Route path="/*" element={<NotFound />} />
         </Routes>
         <GlobalStyles />
-      </Router>
     </ThemeProvider>
   );
 }

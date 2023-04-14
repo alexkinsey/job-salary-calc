@@ -5,9 +5,9 @@ import { FormInput } from '../../../components/Form/FormInput';
 import { FormSelect } from '../../../components/Form/FormSelect';
 
 // HELPERS
-import { parseCurrency } from '../helpers/parseCurrency';
-import { parseHoursPerWeek } from '../helpers/parseHoursPerWeek';
-import { toTitleCase } from '../helpers/toTitleCase';
+import { parseCurrency } from '../../../utils/helpers/parseCurrency';
+import { parseHoursPerWeek } from '../../../utils/helpers/parseHoursPerWeek';
+import { toTitleCase } from '../../../utils/helpers/toTitleCase';
 
 // This component handles the form for the Pay Calculator page
 export const PayCalcForm = ({
@@ -41,7 +41,6 @@ export const PayCalcForm = ({
         options={payPeriods}
         selectedOption={formData.selectedPayPeriod}
         handleOptionChange={(e) => setFormData({ ...formData, selectedPayPeriod: e.target.value })}
-        size={4}
         required
       />
       <FormInput

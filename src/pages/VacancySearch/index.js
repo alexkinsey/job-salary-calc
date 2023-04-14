@@ -10,7 +10,7 @@ import { VacancyCard } from './VacancyCard';
 import { Button } from '../../components/Button';
 
 // HELPERS
-import { fetchVacancyRecent, fetchVacancyBySearch } from '../../services/vacancyApi';
+import { fetchVacancyRecent, fetchVacancyBySearch } from '../../utils/services/vacancyApi';
 import { Input } from '../../components/Form/FormInput/style';
 
 export const VacancySearch = () => {

@@ -18,15 +18,17 @@ import { PAY_CALCULATOR_ROUTE, VACANCY_SEARCH_ROUTE } from '../../constants/rout
 export const Home = () => {
   return (
     <PageBody>
-      <Title>Calculate your pay or find a new job</Title>
-      <Text>
-        Welcome to our job search and pay calculator application. This tool makes it simple and quick for you to find
-        open positions and calculate your pay. With our intuitive and user-friendly interface, you can find the
-        information you need in just a few clicks.
-      </Text>
+      <header>
+        <Title>Calculate your pay or find a new job</Title>
+        <Text>
+          Welcome to our job search and pay calculator application. This tool makes it simple and quick for you to find
+          open positions and calculate your pay. With our intuitive and user-friendly interface, you can find the
+          information you need in just a few clicks.
+        </Text>
+      </header>
       <HomeCard>
         <HomeCardImageContainer>
-          <HomeCardImage src={moneyImage} />
+          <HomeCardImage src={moneyImage} alt="money" />
         </HomeCardImageContainer>
         <HomeCardContent>
           <Heading showUnderline>Pay Calculator</Heading>
@@ -64,7 +66,7 @@ export const Home = () => {
           <Link location={VACANCY_SEARCH_ROUTE}>Take me to the vacancy search</Link>
         </HomeCardContent>
         <HomeCardImageContainer right>
-          <HomeCardImage src={calculatingImage} />
+          <HomeCardImage src={calculatingImage} alt="Job searching" />
         </HomeCardImageContainer>
       </HomeCard>
     </PageBody>

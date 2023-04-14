@@ -9,11 +9,11 @@ import { Text } from '../../../components/Text/Text';
 import { Link } from '../../../components/Link';
 
 // API CALL
-import { fetchDescriptionByTitle } from '../../../services/vacancyApi';
+import { fetchDescriptionByTitle } from '../../../utils/services/vacancyApi';
 
 // HELPERS
-import { formatDate } from '../helpers/formatDate';
-import { howManyDaysAgo } from '../helpers/howManyDaysAgo';
+import { formatDate } from '../../../utils/helpers/formatDate';
+import { howManyDaysAgo } from '../../../utils/helpers/howManyDaysAgo';
 
 export const VacancyCard = ({ vacancy }) => {
   const [selected, setSelected] = useState(false);
