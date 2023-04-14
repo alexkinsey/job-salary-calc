@@ -4,10 +4,8 @@ import { IoClose } from 'react-icons/io5';
 // COMPONENTS
 import { ClearButton, SearchBar } from './style';
 import { PageBody } from '../../common/styles/PageBody';
-import { Text } from '../../components/Text/Text';
-import { Title } from '../../components/Text/Title';
+import { Title, Text, Button } from '../../components/';
 import { VacancyCard } from './VacancyCard';
-import { Button } from '../../components/Button';
 
 // HELPERS
 import { fetchVacancyRecent, fetchVacancyBySearch } from '../../utils/services/vacancyApi';

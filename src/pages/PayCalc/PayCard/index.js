@@ -5,8 +5,7 @@ import { DeleteButton, StyledCard } from './styles';
 import { IoCloseCircleOutline, IoCloseCircleSharp } from 'react-icons/io5';
 
 // COMPONENTS
-import { Text } from '../../../components/Text/Text';
-import { Subheading } from '../../../components/Text/Subheading';
+import { Text, Subheading } from '../../../components';
 
 export const Card = ({
   index,

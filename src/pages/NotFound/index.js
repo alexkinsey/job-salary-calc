@@ -1,8 +1,6 @@
-import React from 'react'
-import { Title } from '../../components/Text/Title'
-import { Text } from '../../components/Text/Text'
+// COMPONENTS
 import { PageBody } from '../../common/styles/PageBody'
-import { Link } from '../../components/Link'
+import { Title, Text, Link } from '../../components'
 
 export const NotFound = () => {
   return (

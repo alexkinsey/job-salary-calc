@@ -1,8 +1,5 @@
 // COMPONENTS
-import { Form } from '../../../components/Form';
-import { Button } from '../../../components/Button';
-import { FormInput } from '../../../components/Form/FormInput';
-import { FormSelect } from '../../../components/Form/FormSelect';
+import { Form, Button, FormInput, FormSelect } from '../../../components';
 
 // HELPERS
 import { parseCurrency } from '../../../utils/helpers/parseCurrency';

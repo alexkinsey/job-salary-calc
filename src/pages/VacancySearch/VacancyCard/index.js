@@ -3,10 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // COMPONENTS
 import { StyledCard } from './styles';
-import { HR } from '../../../components/Text/HR.style';
-import { Subheading } from '../../../components/Text/Subheading';
-import { Text } from '../../../components/Text/Text';
-import { Link } from '../../../components/Link';
+import { Subheading, Text, HR, Link } from '../../../components';
 
 // API CALL
 import { fetchDescriptionByTitle } from '../../../utils/services/vacancyApi';

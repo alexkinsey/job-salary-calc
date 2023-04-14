@@ -7,10 +7,7 @@ import moneyImage from '../../assets/images/money.jpeg';
 
 // COMPONENTS
 import { PageBody } from '../../common/styles/PageBody';
-import { Title } from '../../components/Text/Title';
-import { Heading } from '../../components/Text/Heading';
-import { Text } from '../../components/Text/Text';
-import { Link } from '../../components/Link';
+import { Title, Heading, Text, Link } from '../../components';
 
 // ROUTES
 import { PAY_CALCULATOR_ROUTE, VACANCY_SEARCH_ROUTE } from '../../constants/routes';
@@ -27,9 +24,6 @@ export const Home = () => {
         </Text>
       </header>
       <HomeCard>
-        <HomeCardImageContainer>
-          <HomeCardImage src={moneyImage} alt="money" />
-        </HomeCardImageContainer>
         <HomeCardContent>
           <Heading showUnderline>Pay Calculator</Heading>
           <Text>
@@ -47,8 +41,14 @@ export const Home = () => {
             GOV.UK - Income Tax
           </Link>
         </HomeCardContent>
+        <HomeCardImageContainer right>
+          <HomeCardImage src={moneyImage} alt="money" />
+        </HomeCardImageContainer>
       </HomeCard>
       <HomeCard>
+        <HomeCardImageContainer>
+          <HomeCardImage src={calculatingImage} alt="Job searching" />
+        </HomeCardImageContainer>
         <HomeCardContent>
           <Heading showUnderline>Vacancy Search</Heading>
           <Text>
@@ -65,9 +65,6 @@ export const Home = () => {
           </Text>
           <Link location={VACANCY_SEARCH_ROUTE}>Take me to the vacancy search</Link>
         </HomeCardContent>
-        <HomeCardImageContainer right>
-          <HomeCardImage src={calculatingImage} alt="Job searching" />
-        </HomeCardImageContainer>
       </HomeCard>
     </PageBody>
   );
