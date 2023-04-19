@@ -36,7 +36,7 @@ export const theme = {
     `,
     title: css`
       font-family: ${({ theme }) => theme.fonts.sanSerif};
-      font-weight: 700;
+      font-weight: 600;
       text-transform: uppercase;
     `,
     heading: css`
@@ -46,7 +46,7 @@ export const theme = {
     `,
     subheading: css`
       font-family: ${({ theme }) => theme.fonts.sanSerif};
-      font-weight: 400;
+      font-weight: 500;
       text-transform: uppercase;
     `,
   },

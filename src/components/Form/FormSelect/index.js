@@ -4,7 +4,7 @@ import { Select, Label } from './style';
 // This component takes in a label, options, selectedOption, and handleOptionChange function
 // Options is an array of objects with a value and label
 export const FormSelect = ({ label, options, selectedOption, handleOptionChange, ...props }) => {
-  // Replace spaces with dashes
+  // Replace spaces with dashes for label ID
   let labelId = label.replace(/\s+/g, '-');
 
   // Map over options and create an option element for each
@@ -20,21 +20,16 @@ export const FormSelect = ({ label, options, selectedOption, handleOptionChange,
     <div>
       <Label htmlFor={labelId}>{label}</Label>
       <Select id={labelId} value={selectedOption} onChange={handleOptionChange} {...props}>
-        <option key="0" value="" disabled >Select an option</option>
+        <option key="0" value="" disabled>
+          Select an option
+        </option>
         {optionsList}
       </Select>
     </div>
   );
 };
 
-FormSelect.defaultProps = {
-  options: [
-    { value: 'option1', label: 'Option 1' },
-    { value: 'option2', label: 'Option 2' },
-    { value: 'option3', label: 'Option 3' },
-  ],
-  label: 'Select',
-};
+// Set prop types
 FormSelect.propTypes = {
   label: PropTypes.string,
   options: PropTypes.arrayOf(
@@ -45,4 +40,13 @@ FormSelect.propTypes = {
   ),
   selectedOption: PropTypes.string.isRequired,
   handleOptionChange: PropTypes.func.isRequired,
+};
+// Set default props
+FormSelect.defaultProps = {
+  options: [
+    { value: 'option1', label: 'Option 1' },
+    { value: 'option2', label: 'Option 2' },
+    { value: 'option3', label: 'Option 3' },
+  ],
+  label: 'Select',
 };

@@ -1,3 +1,4 @@
+// This file is used to export all of the components from the components folder so that they can be imported from a single file
 export { Button } from './Button';
 export { Form } from './Form';
 export { FormInput } from './Form/FormInput';

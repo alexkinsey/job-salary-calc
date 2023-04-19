@@ -39,16 +39,16 @@ export const NavContent = styled.div`
   @media (min-width: ${({ theme }) => theme.sizes.lg}) {
     padding: 0 20px;
   }
+  /* before a screen size of 626 the nav content should display as flex with space between each item aligned to the top of the screen */
+  @media (max-width: ${smallNavBreakpoint}) {
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0.75rem 0;
+  }
 `;
 
 export const NavLogo = styled.img`
   height: 40px;
-  @media (max-width: ${smallNavBreakpoint}) {
-    position: fixed;
-    top: 10px;
-    left: 20px;
-    z-index: 1001;
-  }
 `;
 
 export const NavSpacer = styled.div`

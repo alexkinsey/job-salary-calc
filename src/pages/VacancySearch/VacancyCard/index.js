@@ -52,7 +52,7 @@ export const VacancyCard = ({ vacancy }) => {
         <Text black>{vacancy.company}</Text>
         <AnimatePresence>
           {selected && (
-            <motion.section
+            <motion.div
               // this wrapper allows the card content a fade in/out
               className="card-content-animation-wrapper"
               initial={{ opacity: 0 }}
@@ -68,20 +68,20 @@ export const VacancyCard = ({ vacancy }) => {
               {!isLoading && <Text>Loading...</Text>}
               {error && <Text>{error}</Text>}
               {description && (
-                <section>
+                <>
                   <HR />
-                  <Text black>What is a {vacancy.title}?</Text>
+                  <Text medium black>What is a {vacancy.title}?</Text>
                   <Text>{description.description}</Text>
-                  <Text black>Do I need qualifications?</Text>
+                  <Text medium black>Do I need qualifications?</Text>
                   <Text>{description.qualifications}</Text>
-                  <Text black>What would I be responsible for?</Text>
+                  <Text medium black>What would I be responsible for?</Text>
                   <Text>{description.tasks}</Text>
-                </section>
+                </>
               )}
               <Link isExternal location={vacancy.link}>
                 Learn more about this job
               </Link>
-            </motion.section>
+            </motion.div>
           )}
         </AnimatePresence>
       </motion.div>

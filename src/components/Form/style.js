@@ -17,6 +17,7 @@ export const StyledForm = styled.form`
   }
 `;
 
+// Validation error which will be shown if the input is invalid
 export const Error = styled.span`
 color: red;
 font-size: 0.8rem;

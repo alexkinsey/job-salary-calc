@@ -2,9 +2,6 @@ import styled from 'styled-components';
 
 const StyledBurger = styled.div`
   display: none;
-  position: fixed;
-  top: 15px;
-  right: 20px;
   z-index: 1001;
 
   width: 2rem;
@@ -21,17 +18,18 @@ const StyledBurger = styled.div`
   /* create shape of burger icon and animate */
   div {
     width: 2rem;
-    height: 0.15rem;
+    height: 3px;
     background: white;
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s linear;
 
+    /* rotate the lines and fade out the centre line */
     &:nth-child(1) {
       transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};
     }
     &:nth-child(2) {
-      transform: ${({ open }) => (open ? 'translateY(-1rem) rotate(45deg)' : 'translateY(0%) rotate(0)')};
+      transform: ${({ open }) => (open ? 'translateY(-10px) rotate(45deg)' : 'translateY(0%) rotate(0)')};
       opacity: ${({ open }) => (open ? 0 : 1)};
     }
     &:nth-child(3) {

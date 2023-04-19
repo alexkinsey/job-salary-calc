@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// This component is used to set the max width of the page
 export const PageBody = styled.main`
   max-width: ${({ theme }) => theme.sizes.lg};
   min-width: ${({ theme }) => theme.sizes.xs};
