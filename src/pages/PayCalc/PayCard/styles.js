@@ -34,6 +34,7 @@ export const DeleteButton = styled.button`
   font-size: 1.5rem;
   cursor: pointer;
 
+  /* correctly colour the button when hovered over */
   &:hover {
     color: ${({ theme }) => theme.colors.primaryHover};
     #x-fill {

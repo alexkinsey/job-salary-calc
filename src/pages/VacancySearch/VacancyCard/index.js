@@ -12,6 +12,7 @@ import { fetchDescriptionByTitle } from '../../../utils/services/vacancyApi';
 import { formatDate } from '../../../utils/helpers/formatDate';
 import { howManyDaysAgo } from '../../../utils/helpers/howManyDaysAgo';
 
+// This component is used to display a vacancy card
 export const VacancyCard = ({ vacancy }) => {
   const [selected, setSelected] = useState(false);
 

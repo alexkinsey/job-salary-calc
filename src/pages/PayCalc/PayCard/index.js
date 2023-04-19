@@ -7,6 +7,7 @@ import { IoCloseCircleOutline, IoCloseCircleSharp } from 'react-icons/io5';
 // COMPONENTS
 import { Text, Subheading } from '../../../components';
 
+// This component takes pay data and displays it in a card. It also takes in a function to be called when the delete button is clicked
 export const Card = ({
   index,
   jobTitle,

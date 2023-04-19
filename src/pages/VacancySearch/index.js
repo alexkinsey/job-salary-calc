@@ -11,6 +11,7 @@ import { VacancyCard } from './VacancyCard';
 import { fetchVacancyRecent, fetchVacancyBySearch } from '../../utils/services/vacancyApi';
 import { Input } from '../../components/Form/FormInput/style';
 
+// This component is used to display the vacancy search page
 export const VacancySearch = () => {
   const [vacancies, setVacancies] = useState([]);
   const [foundVacancies, setFoundVacancies] = useState([]);
@@ -55,6 +56,7 @@ export const VacancySearch = () => {
     fetchData();
   };
 
+  // clear the search bar and show the 10 most recent vacancies
   const handleClear = () => {
     setSearchTerm('');
     setFoundVacancies([]);

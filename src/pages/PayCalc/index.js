@@ -13,6 +13,7 @@ import { CardContainer, FormContainer } from './style';
 import { calculatePay } from '../../utils/helpers/calculatePay';
 import { validateForm } from '../../utils/helpers/validateForm';
 
+// This component is used to display the pay calculator page
 export const PayCalc = () => {
   // This is the array of options for the pay period select
   const payPeriods = [
@@ -85,6 +86,7 @@ export const PayCalc = () => {
         </Text>
       </FormContainer>
 
+      {/* display the results and map through the results array to create each card */}
       <section>
         <Heading showUnderline>Results</Heading>
         {results.length > 0 ? (

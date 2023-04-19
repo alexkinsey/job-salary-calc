@@ -12,6 +12,7 @@ import { Title, Heading, Text, Link } from '../../components';
 // ROUTES
 import { PAY_CALCULATOR_ROUTE, VACANCY_SEARCH_ROUTE } from '../../constants/routes';
 
+// This component is used to display the home page
 export const Home = () => {
   return (
     <PageBody>
@@ -23,6 +24,7 @@ export const Home = () => {
           information you need in just a few clicks.
         </Text>
       </header>
+
       <HomeCard>
         <HomeCardContent>
           <Heading showUnderline>Pay Calculator</Heading>
@@ -45,6 +47,7 @@ export const Home = () => {
           <HomeCardImage src={moneyImage} alt="money" />
         </HomeCardImageContainer>
       </HomeCard>
+      
       <HomeCard>
         <HomeCardImageContainer>
           <HomeCardImage src={calculatingImage} alt="Job searching" />

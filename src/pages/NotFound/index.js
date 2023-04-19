@@ -2,6 +2,7 @@
 import { PageBody } from '../../common/styles/PageBody'
 import { Title, Text, Link } from '../../components'
 
+// This component is used to display a 404 error page
 export const NotFound = () => {
   return (
     <PageBody>
