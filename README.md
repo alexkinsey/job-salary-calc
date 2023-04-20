@@ -1,7 +1,9 @@
 # Read Me
 
 This project is coursework for Web Application Development 1. It was created using react 18.2, styled-components, react-router, and react-icons.
-You will require node 16.15 or newer to run this application.
+
+You will require node 16.15 or newer to run this application. Use `npm i` to download the dependencies in order to run the application.
+
 You can start the application 2 ways in your terminal.
 * `npm start` - this will build the dev version of the application.
 * `serve -s build` - this will run the built version of the application. You may need to run `npm install -g serve` for this to work
