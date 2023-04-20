@@ -6,6 +6,8 @@ You can start the application 2 ways in your terminal.
 * `npm start` - this will build the dev version of the application.
 * `serve -s build` - this will run the built version of the application. You may need to run `npm install -g serve` for this to work
 
+More information about scripts are listed below
+
 ## Available Scripts
 
 In the project directory, you can run:
