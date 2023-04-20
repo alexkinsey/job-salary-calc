@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 // COMPONENTS
 import { PageBody } from '../../common/styles/PageBody';
-import { Title, Heading, Text } from '../../components';
+import { Title, Heading, Text, Link } from '../../components';
 import { PayCalcForm } from './PayCalcForm';
 import { Card } from './PayCard';
 
@@ -78,12 +78,21 @@ export const PayCalc = () => {
           payPeriods={payPeriods}
           error={error}
         />
-        <Text>
-          Take a moment to provide information your information below. Once you have completed the form, press
-          Calculate, and your results will appear in cards. You can enter in information for as many jobs as you like.
-          The results will be saved in this browser tab. If you would like to remove a result, you can do so by pressing
-          the red X in the top right of the card.
-        </Text>
+        <div>
+          <Text>
+            Take a moment to provide information your information below. Once you have completed the form, press
+            Calculate, and your results will appear in cards. You can enter in information for as many jobs as you like.
+            The results will be saved in this browser tab. If you would like to remove a result, you can do so by
+            pressing the red X in the top right of the card.
+          </Text>
+          <Text>
+            Please note, the calculator does not factor income tax. To find out more about income tax please visit
+            GOV.UK for more information.
+          </Text>
+          <Link location="https://www.gov.uk/topic/personal-tax/income-tax" isExternal>
+            GOV.UK - Income Tax
+          </Link>
+        </div>
       </FormContainer>
 
       {/* display the results and map through the results array to create each card */}

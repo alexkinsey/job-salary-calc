@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 
 // ICONS
-import { FiExternalLink, FiChevronRight } from 'react-icons/fi';
+import { FiExternalLink } from 'react-icons/fi';
+import { VscChevronRight } from 'react-icons/vsc';
 
 // STYLES
 import { LinkContainer, LinkText } from './style';
@@ -22,7 +23,7 @@ export const Link = ({ children, location, isExternal, inline }) => {
           <LinkText>
             {children}
             {/* Remove right arrow if inline */}
-            {!inline && <FiChevronRight style={{ fontSize: '20px', verticalAlign: '-17%' }} />}
+            {!inline && <VscChevronRight style={{ fontSize: '20px', verticalAlign: '-17%', marginLeft: '-3px' }} />}
           </LinkText>
         </LinkContainer>
       )}
